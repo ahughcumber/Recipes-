@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hugh’s Weekly Recipes</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Hugh’s Recipes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#F4F8EE">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4F8EE; --card:#FFFFFF; --ink:#174A2E; --muted:#5E7365; --line:#DCE7D0;
+    --accent:#DB6310; --accent-soft:#FDE8D5; --leaf:#2F7A4F;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  button{font:inherit;cursor:pointer}
+  .wrap{max-width:760px;margin:0 auto;padding:0 16px 96px}
+  header{padding:22px 0 8px}
+  h1{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:30px;letter-spacing:-.02em;margin:0;line-height:1}
+  h1 span{color:var(--accent)}
+  .sub{color:var(--muted);font-size:14px;margin:6px 0 0}
+  .tabs{display:flex;gap:6px;margin:18px 0 14px;background:#E3EDD8;padding:4px;border-radius:14px}
+  .tab{flex:1;border:0;background:transparent;padding:10px;border-radius:10px;font-weight:600;color:var(--muted)}
+  .tab.on{background:var(--card);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+  .count{display:inline-block;min-width:20px;padding:1px 6px;border-radius:10px;background:var(--accent);color:#fff;font-size:12px;margin-left:4px}
+  .find{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:14px}
+  .find label{font-weight:600;font-size:14px;display:block;margin-bottom:8px}
+  .row{display:flex;gap:8px}
+  input[type=text]{flex:1;min-width:0;border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:11px 12px;font:inherit;font-size:16px;color:var(--ink)}
+  input[type=text]:focus{outline:2px solid var(--accent);outline-offset:-1px}
+  .btn{border:0;border-radius:12px;padding:11px 14px;font-weight:600;background:var(--ink);color:#fff;white-space:nowrap}
+  .btn:disabled{opacity:.5}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .hint{font-size:12.5px;color:var(--muted);margin-top:8px}
+  .lbl{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:2px 0 6px}
+  .chips{display:flex;gap:6px;overflow-x:auto;padding:2px 0 12px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 12px;font-size:13.5px;font-weight:500;white-space:nowrap;color:var(--ink)}
+  .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .grid{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:620px){.grid{grid-template-columns:1fr 1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+  .card.picked{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+  .pic{position:relative;display:block;line-height:0}
+  .pic svg{width:100%;height:auto;display:block}
+  .badges{position:absolute;left:10px;top:10px;display:flex;gap:5px;line-height:1}
+  .plat{font-size:11px;font-weight:700;padding:4px 8px;border-radius:7px;color:#fff;letter-spacing:.02em;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+  .new{font-size:11px;font-weight:700;padding:4px 8px;border-radius:7px;background:#E8F3EC;color:var(--leaf)}
+  .play{position:absolute;right:10px;bottom:10px;width:38px;height:38px;border-radius:50%;background:rgba(23,74,46,.85);display:grid;place-items:center;color:#fff;font-size:14px;line-height:1;padding-left:2px}
+  .body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:9px;flex:1}
+  .name{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:18px;line-height:1.2;margin:0}
+  .by{font-size:12.5px;color:var(--muted)}
+  .blurb{font-size:14px;line-height:1.45;margin:0;color:#2B4335}
+  .tags{display:flex;flex-wrap:wrap;gap:5px}
+  .tag{font-size:11.5px;padding:3px 8px;border-radius:999px;background:var(--bg);color:var(--muted);font-weight:500}
+  .actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+  .watch{flex:1;min-width:96px;text-align:center;text-decoration:none;font-size:13.5px;font-weight:600;padding:9px 8px;border-radius:11px;border:1px solid var(--line);color:var(--ink);background:var(--card)}
+  .pick{border:0;border-radius:11px;padding:9px 14px;font-weight:700;font-size:13.5px;background:var(--accent-soft);color:var(--accent)}
+  .card.picked .pick{background:var(--accent);color:#fff}
+  .empty{text-align:center;color:var(--muted);padding:40px 16px;font-size:15px;line-height:1.5}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:14px}
+  .panel h3{margin:0 0 6px;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:18px}
+  .out{white-space:pre-wrap;font-size:14px;line-height:1.5;margin-top:10px}
+  .note{font-size:12.5px;color:var(--muted);margin:8px 0 0}
+  .status{font-size:13px;color:var(--muted);margin:4px 0 10px;min-height:18px}
+  .spinner{display:inline-block;width:12px;height:12px;border:2px solid var(--line);border-top-color:var(--accent);border-radius:50%;animation:s .8s linear infinite;vertical-align:-2px;margin-right:6px}
+  @keyframes s{to{transform:rotate(360deg)}}
+  .rec{border-top:1px solid var(--line);padding-top:10px;font-size:14.5px;line-height:1.5}
+  .rec h4{margin:6px 0 4px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .rec ul,.rec ol{margin:0 0 6px;padding-left:20px}
+  .rec li{margin:4px 0}
+  .rec .txt{white-space:pre-wrap}
+  .rec .foot{font-size:12.5px;color:var(--muted);margin-top:6px}
+  .pick.sec{background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+  .bar{height:8px;border-radius:6px;background:var(--bg);margin-top:10px;overflow:hidden}
+  .bar i{display:block;height:100%;width:0;border-radius:6px;transition:width .2s}
+  .from{font-weight:600;color:var(--ink);margin-top:-4px}
+  .tally{position:fixed;left:0;right:0;bottom:0;z-index:5;background:var(--ink);color:#fff;padding:12px 16px calc(12px + env(safe-area-inset-bottom));display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px;border:0;width:100%;text-align:left}
+  .tally b{font-size:17px;display:block}
+  .tally .r{text-align:right;font-weight:700;white-space:nowrap}
+  .tally.over{background:var(--accent)}
+  .tab{padding:10px 4px;font-size:14px;white-space:nowrap}
+  .heart{position:absolute;right:10px;top:10px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.92);font-size:19px;line-height:1;color:var(--muted);box-shadow:0 1px 3px rgba(0,0,0,.2);padding:0}
+  .heart.on{color:var(--accent)}
+  .picwrap{position:relative}
+  .kcal{font-size:13px;color:var(--ink);background:var(--accent-soft);border-radius:8px;padding:5px 9px;align-self:flex-start}
+  .price{font-weight:700;color:var(--leaf)}
+  .item .p{margin-left:auto;padding-left:10px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .total{display:flex;justify-content:space-between;font-weight:700;font-size:16px;margin-top:14px}
+  .ingl{list-style:none;padding:0 !important}
+  .ingl li{display:flex;gap:10px;justify-content:space-between;padding:5px 0;border-bottom:1px dashed var(--line);margin:0 !important}
+  .ingl b{font-variant-numeric:tabular-nums;color:var(--leaf);white-space:nowrap}
+  .item small{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+  .aisle{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:16px 0 4px}
+  .item{display:flex;gap:12px;align-items:flex-start;padding:10px 2px;border-bottom:1px solid var(--line);font-size:15px;line-height:1.35;cursor:pointer}
+  .item input{flex:none;width:22px;height:22px;margin:0;accent-color:var(--accent)}
+  .item.done span{text-decoration:line-through;color:var(--muted)}
+  .have{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.45}
+  .cook{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:14px}
+  .cook .head{display:flex;gap:12px;align-items:center;padding:12px 14px}
+  .cook .thumb{flex:none;width:96px;border-radius:12px;overflow:hidden;line-height:0}
+  .cook .thumb svg{width:100%;height:auto;display:block}
+  .cook .ttl{flex:1;min-width:0}
+  .cook .steps{border-top:1px solid var(--line);padding:14px;white-space:pre-wrap;font-size:15px;line-height:1.55}
+  .cook .foot{padding:0 14px 14px;font-size:12.5px;color:var(--muted)}
+  .cook .foot a{color:var(--accent);font-weight:600}
+  .cook .row{padding:0 14px 14px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Hugh’s <span>Weekly Recipes</span></h1>
+    <p class="sub">Viral reels plus BBC Food, Good Food and more, with costs and a recipe for each. Add what you fancy to your week.</p>
+  </header>
+  <div class="tabs">
+    <button class="tab on" data-tab="discover">Discover</button>
+    <button class="tab" data-tab="picks">My week <span class="count" id="count">0</span></button>
+    <button class="tab" data-tab="cook">Cook</button>
+    <button class="tab" data-tab="favs">♥ <span id="favCount"></span></button>
+  </div>
+  <main id="app"></main>
+</div>
+<button class="tally" id="tally"></button>
+<script type="application/json" id="state">{"picks":[],"extra":[]}</script>
+<script>
+
+/* ---------- sources ---------- */
+const enc = encodeURIComponent;
+const g = site => q => 'https://www.google.com/search?q=' + enc('site:' + site + ' ' + q);
+const WEB = {
+  bbc:{n:'BBC Food', c:'#1B1B1B', url:q => 'https://www.bbc.co.uk/food/search?q=' + enc(q)},
+  gf:{n:'BBC Good Food', c:'#C8102E', url:q => 'https://www.bbcgoodfood.com/search?q=' + enc(q)},
+  bol:{n:'Bored of Lunch', c:'#1F6F8B', url:g('boredoflunch.com')},
+  del:{n:'delicious.', c:'#7A3B69', url:g('deliciousmagazine.co.uk')},
+  jo:{n:'Jamie Oliver', c:'#2F7A4F', url:g('jamieoliver.com')},
+  mob:{n:'Mob', c:'#1B1B1B', url:g('mob.co.uk')},
+  coop:{n:'Co-op', c:'#0A7FA6', url:g('coop.co.uk')}
+};
+const WEBNAMES = Object.fromEntries(Object.entries(WEB).filter(([k]) => k !== 'app').map(([k,v]) => [v.n, k]));
+
+/* ---------- picture colours ---------- */
+const C = {red:'#D9482B',pasta:'#F2CF7A',rice:'#F7F1E3',green:'#4E9A51',chick:'#E0A458',beef:'#7A4A2E',salmon:'#F58E6B',white:'#FFFDF5',yolk:'#F6B92B',tom:'#E4572E',cuc:'#A8D08D',black:'#3B2B2B',corn:'#F7D046',tofu:'#F3E3B3',cpea:'#E2B66B',curry:'#E58A2B',swp:'#E9803A',cheese:'#F9C74F',onion:'#A65E8E',berry:'#C2334D',oat:'#E8D3B0',choc:'#5B3A29',pepr:'#D7263D',pepg:'#6BA547',pot:'#E6C27A',spin:'#2F7A4F',sesame:'#F5E6C8',pesto:'#6B8E23',bacon:'#B5523B',prawn:'#F7A58B',cake:'#E3A857',honey:'#E8A317',cream:'#FBEBD0',toast:'#D9A05B',bean:'#C96A3B',pink:'#F6B8C4'};
+/* v = vessel, b = base colour, b2 = inner colour, t = toppings [shape, colour, count] */
+const KINDS = {
+  pasta:{v:'bowl',b:'pasta',t:[['strip','pasta',14],['dot','tom',6],['leaf','green',5],['crumb','white',14]]},
+  noodles:{v:'bowl',b:'curry',t:[['strip','pasta',16],['leaf','green',5],['crumb','sesame',16],['dot','pepr',4]]},
+  ricebowl:{v:'bowl',b:'rice',t:[['chunk','chick',6],['dot','green',5],['leaf','green',4],['crumb','sesame',12]]},
+  curry:{v:'bowl',b:'curry',t:[['dot','cpea',10],['leaf','green',5],['drizzle','cream',1]]},
+  salad:{v:'bowl',b:'cuc',t:[['leaf','green',9],['dot','tom',6],['half','cuc',5],['crumb','white',10]]},
+  traybake:{v:'tray',b:'cream',t:[['chunk','chick',5],['dot','tom',7],['chunk','pepg',5],['leaf','green',5]]},
+  fish:{v:'tray',b:'cream',t:[['fillet','salmon',2],['dot','tom',6],['leaf','green',6],['half','yolk',3]]},
+  pan:{v:'pan',b:'red',t:[['chunk','chick',5],['leaf','green',5],['dot','cream',5]]},
+  stirfry:{v:'pan',b:'beef',t:[['chunk','beef',6],['chunk','pepr',5],['chunk','pepg',5],['crumb','sesame',12]]},
+  pizza:{v:'plate',b:'toast',b2:'red',t:[['dot','white',7],['leaf','green',6],['ring','bacon',4]]},
+  toast:{v:'duo',b:'toast',t:[['dot','yolk',3],['leaf','green',5],['crumb','black',10]]},
+  sandwich:{v:'duo',b:'toast',t:[['leaf','green',7],['half','tom',4],['chunk','cheese',4]]},
+  wrap:{v:'trio',b:'cream',t:[['chunk','chick',6],['leaf','green',6],['dot','tom',6],['crumb','cheese',10]]},
+  eggs:{v:'pan',b:'white',t:[['dot','yolk',3],['leaf','green',5],['crumb','black',10]]},
+  oats:{v:'bowl',b:'oat',t:[['dot','berry',7],['half','yolk',4],['crumb','choc',10],['drizzle','honey',1]]},
+  pancakes:{v:'plate',b:'cake',t:[['dot','berry',6],['drizzle','honey',1],['dot','white',2]]},
+  sweet:{v:'bowl',b:'pink',t:[['dot','berry',7],['crumb','choc',12],['leaf','green',2]]},
+  bars:{v:'bars',b:'oat',t:[['crumb','choc',14],['crumb','sesame',12]]},
+  soup:{v:'bowl',b:'swp',t:[['drizzle','cream',1],['leaf','green',4],['crumb','black',8]]},
+  chicken:{v:'plate',b:'cream',t:[['fillet','chick',2],['leaf','green',6],['dot','tom',5]]},
+  potato:{v:'tray',b:'cream',t:[['dot','pot',9],['leaf','green',6],['crumb','white',14]]},
+  dip:{v:'bowl',b:'cheese',t:[['dot','tom',4],['leaf','green',4],['crumb','pepr',10]]},
+  beans:{v:'bowl',b:'bean',t:[['dot','cpea',12],['chunk','bacon',4],['leaf','green',3]]},
+  plate:{v:'plate',b:'cream',t:[['chunk','chick',5],['leaf','green',6],['dot','tom',5]]}
+};
+
+/* ---------- library ---------- */
+const R = (id,n,k,b,t,m,extra) => Object.assign({id,n,k,b,t,m}, extra);
+const LIB = [
+ R('beef-bowl','Hot honey sweet potato beef bowl','ricebowl','Taco-spiced mince, roasted sweet potato, cottage cheese and a hot honey drizzle. The viral protein bowl.',['High protein','Meal prep','Dinner'],40,{p:'TikTok',ru:'https://www.countryandtownhouse.com/food-and-drink/sweet-potato-hot-honey-bowl',q:'sweet potato beef cottage cheese hot honey bowl',a:{b:'cream',t:[['chunk','swp',7],['dot','beef',9],['dot','white',5],['drizzle','honey',1],['leaf','green',3]]}}),
+ R('salmon-traybake','Salmon traybake with soy, chilli and lime','fish','Salmon fillets roasted on one tray with a sticky soy, chilli and lime glaze. On the table in about half an hour.',['High protein','Quick','Dinner'],30,{w:'bbc',u:'https://www.bbc.co.uk/food/recipes/salmon_traybake_53794',c:'BBC Food team'}),
+ R('caesar-pizza','Chicken-crust Caesar salad pizza','pizza','A crust made from chicken and cheese, topped with Caesar salad. Low-carb and high in protein.',['High protein','Dinner'],45,{p:'TikTok',ru:'https://www.theflowspace.com/physical-health/prevention-longevity/high-protein-chicken-crust-caesar-salad-pizza-tiktok-recipe-2949851/',c:'@mamacookslowcarb',q:'chicken crust caesar salad pizza',a:{b:'chick',b2:'cheese',t:[['leaf','green',12],['crumb','white',14]]}}),
+ R('pork-chops','Quick honey & garlic pork chops','chicken','Storecupboard glaze, five minutes of prep and ten in the pan. A proper midweek saver.',['High protein','Quick','Dinner','Budget'],15,{w:'gf',u:'https://www.bbcgoodfoodme.com/recipes/quick-honey-garlic-pork-chops/',a:{t:[['fillet','chick',2],['drizzle','honey',1],['leaf','green',5]]}}),
+ R('salmon-rice','Salmon rice bowl','ricebowl','Leftover salmon and rice reheated with the ice-cube trick, mashed with mayo and sriracha, eaten with seaweed.',['High protein','Quick','Lunch'],10,{p:'TikTok',c:'@emilymariko',q:'emily mariko salmon rice bowl',a:{t:[['chunk','salmon',7],['chunk','spin',4],['drizzle','pepr',1],['crumb','sesame',10]]}}),
+ R('feta-pasta','Baked feta pasta','pasta','A block of feta roasted with cherry tomatoes, smashed into a sauce and tossed with pasta.',['Veggie','Dinner','Budget'],35,{p:'TikTok',c:'@feelgoodfoodie',q:'baked feta pasta',a:{t:[['strip','pasta',12],['dot','tom',10],['chunk','white',4],['leaf','green',5]]}}),
+ R('chilli-beef','Air fryer crispy chilli beef','stirfry','The takeaway favourite done in the air fryer in about 30 minutes: crisp beef strips in a sweet chilli sauce.',['High protein','Dinner'],30,{w:'gf',u:'https://www.bbcgoodfoodme.com/recipes/air-fryer-crispy-chilli-beef/'}),
+ R('pesto-eggs','Pesto eggs','eggs','Fry eggs in pesto instead of oil, then pile onto toast. Two minutes, big flavour.',['Veggie','Quick','Breakfast'],5,{p:'TikTok',c:'@amywilichowski',q:'pesto eggs',u:'https://www.tiktok.com/@amywilichowski/video/6955536851595758853',a:{b:'pesto',t:[['dot','white',3],['dot','yolk',3],['crumb','pepr',10]]}}),
+ R('sriracha-mince','Honey sriracha fried chicken mince','ricebowl','Chicken mince fried until sticky in honey and sriracha, served over rice. Quick, cheap and full of flavour.',['High protein','Quick','Dinner','Budget'],null,{w:'bol',u:'https://boredoflunch.com/recipes/honey-sriracha-fried-chicken-mince/',a:{t:[['dot','chick',12],['drizzle','pepr',1],['leaf','green',5],['crumb','sesame',10]]}}),
+ R('vodka-pasta','Spicy vodka pasta (Gigi Hadid)','pasta','Creamy tomato pasta with chilli flakes and an optional splash of vodka. Restaurant feel, cupboard ingredients.',['Veggie','Dinner'],25,{p:'Both',q:'gigi hadid spicy vodka pasta',a:{b:'swp',t:[['strip','pasta',14],['crumb','pepr',12],['leaf','green',4],['crumb','white',12]]}}),
+ R('turmeric-cod','Turmeric cod with chickpea traybake','fish','Cod on a bed of chickpeas with ginger, garlic and turmeric. Filling but low in fat and calories.',['High protein','Dinner'],55,{w:'gf',u:'https://bbcgoodfoodme.com/recipes/turmeric-cod-with-chickpea-traybake',a:{b:'yolk',t:[['fillet','white',2],['dot','cpea',12],['leaf','green',5]]}}),
+ R('cc-flatbread','Cottage cheese flatbread','wrap','Blend cottage cheese and eggs, bake thin, and use it as a high-protein wrap or pizza base.',['High protein','Veggie','Lunch'],40,{p:'Both',q:'cottage cheese flatbread'}),
+ R('beef-stirfry','Beef and pepper stir-fry','stirfry','Tender beef strips and peppers tossed in a hot pan. A fast, protein-rich dinner from Mary Berry.',['High protein','Quick','Dinner'],30,{w:'bbc',u:'https://www.bbc.co.uk/food/recipes/beef_pepper_stir_fry_88499',c:'Mary Berry'}),
+ R('marry-me','Marry Me chicken','pan','Seared chicken breasts in a creamy sun-dried tomato and parmesan sauce. All in one pan.',['High protein','Dinner'],30,{p:'Both',q:'marry me chicken',a:{b:'swp',t:[['fillet','chick',3],['dot','tom',6],['leaf','green',6]]}}),
+ R('chicken-satay','Slow cooker chicken satay','curry','Throw everything in the slow cooker and come back to chicken in a rich peanut sauce.',['High protein','Dinner','Budget','Meal prep'],null,{w:'bol',u:'https://boredoflunch.com/recipes/slow-cooker-chicken-satay-dump-bag-recipe/',a:{b:'chick',t:[['chunk','cream',7],['crumb','pot',14],['leaf','green',5],['dot','pepr',3]]}}),
+ R('smash-tacos','Smash burger tacos','wrap','Mince smashed straight onto a tortilla in the pan, flipped, then topped Big Mac style with burger sauce.',['High protein','Quick','Dinner'],20,{p:'TikTok',q:'smash burger tacos',a:{t:[['dot','beef',9],['chunk','cheese',6],['leaf','green',7],['crumb','white',8]]}}),
+ R('cc-icecream','Cottage cheese ice cream','sweet','Cottage cheese blended with fruit and a little honey, then frozen. A creamy dessert with a protein hit.',['High protein','Sweet','Veggie'],10,{p:'TikTok',q:'cottage cheese ice cream'}),
+ R('cowboy-caviar','Cowboy caviar','salad','Beans, sweetcorn, peppers and tomato in a zingy dressing. Scoop it up with tortilla chips or serve as a side.',['Vegan','Quick','Lunch','Budget'],15,{p:'TikTok',c:'@brialem',q:'cowboy caviar',a:{b:'corn',t:[['dot','black',10],['dot','corn',10],['chunk','pepr',6],['leaf','green',6]]}}),
+ R('cucumber-salad','Whole cucumber salad','salad','A whole cucumber sliced into a jar with soy, sesame and chilli oil, then shaken. Endless variations.',['Vegan','Quick','Lunch'],5,{p:'Both',c:'@logagm',q:'logan cucumber salad',a:{t:[['ring','green',14],['crumb','sesame',16],['crumb','pepr',10]]}}),
+ R('piri-piri','One-pan piri piri chicken dinner','traybake','Chicken and veg roasted together with piri piri spice. Dial the chilli up or down to suit.',['High protein','Dinner'],null,{w:'gf',u:'https://www.bbcgoodfoodme.com/recipes/one-pan-piri-piri-chicken-dinner/',a:{t:[['fillet','swp',2],['dot','pot',7],['chunk','pepr',5],['leaf','green',5]]}}),
+ R('dan-dan','5-minute dan dan noodles','noodles','Quick Sichuan-style noodles in a spicy sesame, soy and chilli oil sauce.',['Quick','Dinner','Budget'],10,{p:'TikTok',q:'easy dan dan noodles'}),
+ R('baked-oats','Protein baked oats','oats','Blended oats, egg, yoghurt and protein powder baked in a ramekin until it tastes like cake.',['High protein','Breakfast','Sweet'],25,{p:'Both',q:'protein baked oats'}),
+ R('tofu-pancakes','Tofu protein pancakes','pancakes','Silken tofu blended into the batter for fluffy vegan pancakes.',['High protein','Vegan','Breakfast'],20,{p:'TikTok',q:'tofu protein pancakes'}),
+ R('chipotle-steak','Creamy chipotle steak with sweet potatoes','plate','Sliced steak in a smoky, creamy chipotle sauce with sweet potatoes on the side.',['High protein','Dinner'],null,{w:'bol',u:'https://boredoflunch.com/recipes/creamy-chipotle-steak-with-sweet-potatoes/',a:{t:[['fillet','beef',2],['chunk','swp',7],['drizzle','swp',1],['leaf','green',4]]}}),
+ R('chickpea-curry','Butter chickpea curry','curry','Butter-chicken-style curry made with chickpeas, with blended silken tofu for creaminess and protein.',['High protein','Vegan','Dinner','Budget'],30,{p:'TikTok',q:'butter chickpea curry silken tofu'}),
+ R('lemon-tofu','Sticky lemon pepper tofu','ricebowl','Crispy tofu in a glossy lemon-pepper glaze. Takeaway vibes, served with rice.',['Vegan','Dinner'],30,{p:'TikTok',q:'sticky lemon pepper tofu',a:{t:[['chunk','yolk',8],['half','corn',3],['crumb','black',12],['leaf','green',4]]}}),
+ R('smashed-pots','Garlic parmesan smashed potatoes','potato','Boiled baby potatoes smashed flat and roasted crispy with garlic butter and parmesan.',['Veggie','Budget'],45,{p:'TikTok',q:'garlic parmesan smashed potatoes'}),
+ R('baked-cod','Baked cod with tomatoes, capers & basil','fish','A light, lean white fish supper baked with tomatoes, capers and basil.',['High protein','Dinner'],null,{w:'gf',u:'https://www.bbcgoodfoodme.com/recipes/baked-cod-with-tomatoes-capers-basil/',a:{t:[['fillet','white',2],['dot','tom',9],['crumb','pesto',10],['leaf','green',6]]}}),
+ R('grinder','Grinder salad sandwich','sandwich','Italian deli meats in a sub roll, piled with a creamy, tangy chopped salad.',['Lunch','Quick'],15,{p:'TikTok',q:'grinder salad sandwich'}),
+ R('tuna-linguine','Tuna chilli linguine','pasta','Tinned tuna, chilli and linguine. A storecupboard pasta that costs very little.',['Budget','Quick','Dinner'],15,{w:'del',u:'https://www.deliciousmagazine.co.uk/recipes/tuna-chilli-linguine/',a:{t:[['strip','pasta',14],['chunk','prawn',6],['crumb','pepr',12],['leaf','green',5]]}}),
+ R('onion-boil','Onion boil','potato','A whole onion stuffed with butter and Cajun seasoning, wrapped in foil and roasted until jammy.',['Veggie','Budget'],60,{p:'TikTok',q:'onion boil',a:{t:[['ring','onion',6],['dot','cream',4],['crumb','pepr',14],['leaf','green',3]]}}),
+ R('fajitas','Chicken fajitas with guacamole','wrap','Sizzling spiced chicken and peppers in tortillas with fresh guacamole.',['High protein','Dinner'],null,{w:'jo',u:'https://www.jamieoliver.com/recipes/chicken-recipes/chicken-fajitas-with-guacamole/',a:{t:[['chunk','chick',6],['chunk','pepr',5],['dot','pepg',5],['chunk','yolk',4]]}}),
+ R('pasta-chips','Air fryer pasta chips','dip','Cooked pasta tossed in oil and parmesan, air-fried until crunchy. Dip in marinara or whipped feta.',['Veggie','Budget'],20,{p:'TikTok',q:'air fryer pasta chips',a:{v:'plate',b:'cream',t:[['chunk','pasta',12],['dot','red',1],['crumb','white',12]]}}),
+ R('boursin','Baked Boursin pasta','pasta','The feta-pasta method with a Boursin round instead: garlic and herb cream sauce, no effort.',['Veggie','Dinner'],35,{p:'TikTok',q:'boursin pasta',a:{b:'cream',t:[['strip','pasta',14],['dot','tom',7],['leaf','spin',7]]}}),
+ R('onion-toast','Caramelised onion toast','toast','Slow-cooked sweet onions piled on crisp buttered toast, often with cheese melted on top.',['Veggie','Breakfast'],30,{p:'Instagram',q:'caramelised onion toast',a:{t:[['strip','beef',8],['chunk','cheese',4],['leaf','green',3]]}}),
+ R('paneer-rice','Herby paneer baked rice','ricebowl','Basmati baked with paneer, mangetout and peas. An easy veggie dinner for two.',['Veggie','Dinner'],null,{w:'gf',u:'https://www.bbcgoodfoodme.com/recipes/herby-paneer-baked-rice/',a:{t:[['chunk','white',7],['dot','green',10],['leaf','green',6]]}}),
+ R('egg-pizza','Egg bread pan pizza','pizza','Bread pressed into beaten egg in a pan, flipped and topped like a pizza. A brunch hack.',['Veggie','Quick','Breakfast'],15,{p:'Instagram',q:'egg bread pan pizza',a:{v:'pan',b:'yolk',b2:'red',t:[['dot','white',6],['leaf','green',5]]}}),
+ R('overnight-oats','High-protein overnight oats','oats','Oats, Greek yoghurt, milk and protein powder left in the fridge overnight. Grab-and-go breakfast.',['High protein','Breakfast','Meal prep','Budget'],5,{p:'Instagram',q:'high protein overnight oats'}),
+ R('tiktok-spag','TikTok chicken spaghetti','pasta','Floured chicken and onions in a creamy parmesan sauce, tossed through spaghetti.',['High protein','Dinner'],35,{p:'TikTok',q:'tiktok chicken spaghetti',a:{b:'cream',t:[['strip','pasta',14],['chunk','chick',6],['leaf','green',4]]}}),
+ R('protein-bars','Protein bars','bars','Homemade bars with protein powder, banana, nut butter and seeds. A post-workout snack to batch.',['High protein','Sweet','Meal prep'],null,{w:'gf',u:'https://www.bbcgoodfoodme.com/recipes/protein-bars/'}),
+ R('thai-basil-beef','Thai basil beef stir fry','stirfry','Marinated beef in a Thai-style coconut and red curry sauce with baby corn and pak choi. Cooks in under ten minutes.',['High protein','Quick','Dinner'],null,{w:'bbc',c:'Mary Berry',u:'https://www.bbc.co.uk/food/recipes/thai_basil_beef_stir_fry_44660',a:{b:'curry',t:[['chunk','beef',6],['chunk','corn',5],['leaf','green',8]]}}),
+ R('black-pepper-beef','Black pepper beef stir fry with egg fried rice','ricebowl','Peppery marinated beef and peppers in oyster and soy sauce, served on homemade egg fried rice.',['High protein','Dinner'],null,{w:'bbc',u:'https://www.bbc.co.uk/food/recipes/blackpepperbeefstirf_92254',a:{t:[['chunk','beef',7],['chunk','pepr',4],['chunk','pepg',4],['dot','yolk',4],['crumb','black',12]]}}),
+ R('curried-cod','Curried butter-baked cod with cauliflower & chickpeas','fish','An aromatic cod traybake with roasted cauliflower and chickpeas.',['High protein','Dinner'],70,{w:'gf',u:'https://www.bbcgoodfoodme.com/recipes/curried-butter-baked-cod-with-cauliflower-chickpeas',a:{b:'yolk',t:[['fillet','white',2],['dot','cream',7],['dot','cpea',8],['leaf','green',5]]}}),
+ R('black-bean-beef','Easy beef in black bean sauce','stirfry','Rump steak stir-fried with peppers, ginger, chilli and garlic in black bean sauce. Half an hour, start to finish.',['High protein','Quick','Dinner'],30,{w:'gf',u:'https://www.bbcgoodfoodme.com/recipes/easy-beef-black-bean-sauce/'}),
+ R('spicy-salmon-potato','Spicy salmon and new potato traybake','fish','Salmon glazed with gochujang, lime and soy, roasted with new potatoes and pak choi.',['High protein','Dinner'],null,{w:'del',u:'https://www.deliciousmagazine.co.uk/recipes/spicy-salmon-new-potato-traybake/',a:{t:[['fillet','salmon',2],['dot','pot',8],['leaf','green',7],['half','pepg',3]]}}),
+ R('tuna-lemon-spag','Tuna, parsley and lemon spaghetti','pasta','Tinned tuna lifted with red chilli, parsley and lemon. An Italian-style storecupboard supper.',['Budget','Dinner'],null,{w:'del',u:'https://www.deliciousmagazine.co.uk/recipes/tuna-parsley-and-lemon-spaghetti/',a:{b:'cream',t:[['strip','pasta',14],['chunk','prawn',6],['leaf','green',8],['half','yolk',2]]}}),
+ R('asian-salmon-swp','Asian salmon & sweet potato traybake','fish','Salmon baked over sweet potato in a light coconut broth with chilli and lime.',['High protein','Dinner'],null,{w:'jo',u:'https://www.jamieoliver.com/recipes/fish/asian-salmon-sweet-potato-traybake',a:{b:'cream',t:[['fillet','salmon',2],['chunk','swp',8],['leaf','green',6],['crumb','pepr',8]]}}),
+ R('n-roast-chicken-traybake','Roast chicken traybake','traybake','Chicken thighs roasted in one tin with lime, garlic, paprika and thyme. Ten minutes of prep, then the oven does the rest.',['High protein','Dinner','Budget'],75,{w:'gf',u:'https://bbcgoodfoodme.com/recipes/roast-chicken-tray-bake',a:{t:[['fillet','swp',2],['dot','pot',8],['ring','onion',4],['half','pepg',2]]}}),
+ R('n-griddled-chicken','Griddled chicken with lemon & thyme','chicken','Thin chicken breast charred with lemon and thyme, served with houmous and olives.',['High protein','Quick','Dinner','Lunch'],20,{w:'gf',u:'https://www.bbcgoodfoodme.com/recipes/griddled-chicken-with-lemon-and-thyme/',a:{t:[['fillet','chick',2],['half','yolk',2],['dot','black',5],['dot','cream',2],['leaf','green',5]]}}),
+ R('n-fruity-curry-traybake','Fruity chicken curry traybake','traybake','Chicken breasts baked in a creamy curry and mango chutney coating. A curry made in the oven with almost no chopping.',['High protein','Dinner'],35,{w:'del',u:'https://www.deliciousmagazine.co.uk/recipes/fruity-chicken-curry-traybake/',a:{b:'curry',t:[['fillet','chick',2],['dot','cpea',8],['chunk','pepr',4],['leaf','green',4]]}}),
+ R('n-easy-chicken-curry','Easy chicken curry','curry','A storecupboard chicken curry with potato and tinned tomatoes. A reliable midweek standby.',['High protein','Dinner','Budget','Meal prep'],50,{w:'del',u:'https://www.deliciousmagazine.co.uk/recipes/easy-chicken-curry/',a:{t:[['chunk','chick',6],['dot','pot',6],['leaf','spin',5]]}}),
+ R('n-chicken-pesto-pasta','Chicken pesto pasta','pasta','Pesto pasta with green beans, spinach and tomatoes, topped with garlic chicken.',['High protein','Quick','Dinner'],15,{w:'jo',u:'https://www.jamieoliver.com/recipes/pasta-recipes/pasta-pesto',a:{b:'pesto',t:[['strip','pasta',12],['fillet','chick',1],['dot','tom',6],['leaf','green',6]]}}),
+ R('n-crispy-chicken-tzatziki','Crispy chicken, brown rice, chickpeas & tzatziki','ricebowl','Crisp-skinned chicken with rice and chickpeas cooked in the same pan, and cool tzatziki on the side.',['High protein','Dinner'],30,{w:'mob',u:'https://mob.co.uk/recipes/crispy-chicken-brown-rice-chickpeas-tzatziki',a:{b:'oat',t:[['fillet','swp',2],['dot','cpea',9],['dot','white',2],['leaf','green',4]]}}),
+ R('n-satay-one-pot-rice','Chicken satay one-pot rice','ricebowl','Chicken, peppers and rice cooked together in a peanut and coconut sauce. One pot to wash up.',['High protein','Dinner','Meal prep'],35,{w:'mob',c:'Meg Robinson',u:'https://mob.co.uk/recipes/chicken-satay-one-pot-rice',a:{b:'chick',t:[['chunk','cream',7],['chunk','pepr',5],['crumb','pot',12],['half','pepg',2]]}}),
+ R('n-steamed-chicken-bowl','Steamed chicken rice bowl with peanut & sesame','ricebowl','Gently poached chicken over rice with a nutty sesame dressing. Light, simple and filling.',['High protein','Dinner','Lunch'],30,{w:'mob',u:'https://mob.co.uk/recipes/steamed-chicken-rice-bowl-peanut-sesame',a:{t:[['fillet','cream',2],['drizzle','chick',1],['leaf','green',6],['crumb','sesame',12]]}}),
+ R('n-beef-ginger','Stir-fried beef with ginger','stirfry','Beef and green pepper stir-fried with ginger, garlic, lime and basil. A takeaway alternative.',['High protein','Quick','Dinner'],28,{w:'gf',u:'https://www.bbcgoodfoodme.com/recipes/stir-fried-beef-with-ginger',a:{t:[['chunk','beef',7],['chunk','pepg',7],['leaf','green',5]]}}),
+ R('n-lighter-chilli-beef','Lighter Chinese chilli beef','stirfry','Crisp five-spice beef with peppers in a sweet, sharp chilli sauce, made with far less oil than the takeaway version.',['High protein','Dinner'],45,{w:'gf',u:'https://bbcgoodfoodme.com/recipes/lighter-chinese-chilli-beef'}),
+ R('n-saucy-beef','Saucy beef stir fry','stirfry','Beef strips marinated in balsamic and soy, flashed in a hot wok with peppers and spring onions.',['High protein','Dinner'],null,{w:'gf',u:'https://bbcgoodfoodme.com/recipes/saucy-beef-stir-fry',a:{t:[['chunk','beef',8],['chunk','pepr',6],['leaf','green',4]]}}),
+ R('n-salmon-soy-sesame','Salmon traybake with soy and sesame dressing','fish','Salmon, potatoes and greens roasted on one tray, finished with a soy and sesame dressing.',['High protein','Dinner'],40,{w:'del',u:'https://deliciousmagazine.co.uk/recipes/salmon-traybake-soy-sesame',a:{t:[['fillet','salmon',2],['dot','pot',7],['leaf','green',8],['crumb','sesame',12]]}}),
+ R('n-chicken-salad','Chicken salad','salad','A fresh, colourful chicken salad for two. Good for lunch or packed up to take out.',['High protein','Lunch','Quick'],null,{w:'bbc',u:'https://www.bbc.co.uk/food/recipes/chicken_salad_12627',a:{t:[['leaf','green',9],['chunk','chick',6],['dot','tom',6],['half','cuc',4]]}}),
+ R('n-spicy-chicken-rice','Spicy chicken rice bowl','ricebowl','Lightly spiced chicken and crunchy veg over rice, from just five main ingredients.',['High protein','Quick','Dinner','Budget'],null,{w:'coop',u:'https://www.coop.co.uk/recipes/spicy-chicken-rice-bowl',a:{t:[['chunk','swp',7],['chunk','pepr',4],['leaf','green',6],['drizzle','pepr',1]]}}),
+ R('n-cod-chickpea-traybake','Cod & chick pea traybake','fish','Cod roasted over chickpeas and tomatoes with lemon and parsley. The oven does the work.',['High protein','Quick','Dinner'],30,{w:'coop',u:'https://www.coop.co.uk/recipes/cod-and-chick-pea-traybake',a:{t:[['fillet','white',2],['dot','cpea',9],['dot','tom',6],['half','yolk',2],['leaf','green',4]]}}),
+ R('n-chicken-tinga','Chipotle chicken tinga','wrap','Shredded chicken in a smoky chipotle and tomato sauce, piled into tortillas with avocado.',['High protein','Dinner'],null,{w:'gf',u:'https://www.bbcgoodfoodme.com/recipes/chipotle-chicken-tinga/',a:{t:[['chunk','swp',7],['dot','red',4],['dot','pepg',4],['leaf','green',4]]}}),
+ R('cc-queso','Cottage cheese queso dip','dip','Cottage cheese blitzed with cheddar and spices, warmed into a smooth high-protein nacho dip.',['High protein','Veggie','Quick'],10,{p:'TikTok',q:'cottage cheese queso'})
+];
+
+const BUILT = {
+'beef-bowl':{ing:['250g lean beef mince','1 large sweet potato, cubed','1 tbsp taco seasoning','200g cottage cheese','1 tbsp hot honey (or honey + chilli flakes)','Handful of spinach'],st:['Heat the oven to 200C (180C fan). Toss the sweet potato with 1 tbsp oil and a pinch of salt and roast for 25 minutes until soft and golden.','Fry the mince in a dry pan over a high heat for 6 minutes, breaking it up. Add the taco seasoning and a splash of water and cook for 2 minutes.','Divide the spinach, sweet potato and mince between two bowls.','Add a big spoon of cottage cheese to each and drizzle with the hot honey.']},
+'salmon-traybake':{ing:['2 salmon fillets','100g tenderstem broccoli','100g green beans','1 red pepper, sliced','1 tbsp soy sauce','½ lime, juiced','1 red chilli, finely chopped'],st:['Heat the oven to 200C (180C fan).','Toss the broccoli, beans and pepper with 1 tbsp oil on a tray and roast for 10 minutes.','Mix the soy, lime juice and chilli. Add the salmon to the tray and spoon half the dressing over it.','Roast for 12–15 minutes until the salmon flakes easily. Pour over the rest of the dressing to serve.']},
+'caesar-pizza':{ing:['300g chicken mince','60g grated parmesan','1 egg','1 little gem lettuce, shredded','2 tbsp Caesar dressing','1 slice of bread, toasted and cubed'],st:['Heat the oven to 200C (180C fan) and line a baking tray with baking paper.','Mix the chicken mince, egg and half the parmesan with a pinch of salt. Press it out thinly into a round about 25cm wide.','Bake for 20–25 minutes until golden and cooked through with no pink in the middle.','Toss the lettuce with the dressing and croutons, pile on the crust and finish with the rest of the parmesan.']},
+'pork-chops':{ing:['2 pork chops','2 tbsp honey','2 garlic cloves, crushed','1 tbsp soy sauce','1 tbsp cider vinegar (or white wine vinegar)'],st:['Season the chops. Heat 1 tsp oil in a frying pan over a medium-high heat.','Cook the chops for 4–5 minutes each side until golden and cooked through.','Turn the heat down. Add the garlic for 30 seconds, then the honey, soy and vinegar.','Bubble for 1 minute, turning the chops in the sticky glaze. Serve with rice or greens.']},
+'salmon-rice':{ing:['1 cooked salmon fillet (or 1 tin salmon, drained)','250g cooked rice','1 tbsp soy sauce','1 tbsp mayonnaise','1 tsp sriracha','1 pack seaweed snacks','½ avocado (optional)'],st:['Flake the salmon into a bowl with the rice. Lay an ice cube on top, cover loosely with baking paper and microwave for 1½–2 minutes until piping hot. Remove the ice.','Mash the salmon through the rice with the soy.','Drizzle with the mayonnaise and sriracha and add the avocado if using.','Scoop up mouthfuls with the seaweed sheets.']},
+'feta-pasta':{ing:['200g block of feta','400g cherry tomatoes','2 garlic cloves','200g dried pasta','Handful of basil (optional)'],st:['Heat the oven to 200C (180C fan). Put the feta in the middle of a baking dish with the tomatoes around it. Drizzle with 2 tbsp oil and season.','Bake for 30 minutes until the tomatoes burst. Meanwhile cook the pasta and save a mug of the cooking water.','Crush the garlic into the dish and mash the feta and tomatoes into a sauce.','Stir through the pasta with a splash of cooking water and the basil.']},
+'chilli-beef':{ing:['250g beef stir-fry strips','2 tbsp cornflour','1 red pepper, sliced','3 tbsp sweet chilli sauce','1 tbsp soy sauce','2 spring onions, sliced'],st:['Toss the beef with the cornflour and a pinch of salt until coated. Spray or drizzle with a little oil.','Air fry at 200C for 10–12 minutes, shaking halfway, until crisp.','Meanwhile, fry the pepper in a pan for 3 minutes. Add the sweet chilli and soy and bubble for 1 minute.','Toss the crispy beef in the sauce and scatter with spring onions. Serve with rice.']},
+'pesto-eggs':{ing:['2 tbsp pesto','2 eggs','1 slice sourdough or bread','Pinch of chilli flakes (optional)'],st:['Spoon the pesto into a frying pan over a medium heat.','When it starts to sizzle, crack the eggs into it.','Fry for 2–3 minutes until the whites are set and the edges are crisp. Toast the bread meanwhile.','Slide the eggs onto the toast and sprinkle with chilli flakes.']},
+'sriracha-mince':{ing:['250g chicken mince','2 garlic cloves, crushed','2 tbsp honey','1–2 tbsp sriracha','1 tbsp soy sauce','1 pouch microwave rice (250g)'],st:['Fry the mince in 1 tsp oil over a high heat for 6–7 minutes, breaking it up, until golden and crispy in places.','Add the garlic for 30 seconds.','Stir in the honey, sriracha and soy and bubble for 1–2 minutes until sticky.','Heat the rice following the pouch and serve the mince on top.']},
+'vodka-pasta':{ing:['200g dried pasta','2 tbsp tomato purée','100ml double cream','½ onion, finely chopped','1 garlic clove, crushed','½ tsp chilli flakes','30g parmesan, grated'],st:['Cook the pasta and save a mug of the cooking water.','Fry the onion in 1 tbsp oil for 5 minutes, add the garlic and chilli for 1 minute, then the tomato purée for 2 minutes until it darkens. (Add a splash of vodka here if you like and let it bubble off.)','Stir in the cream and simmer for 1 minute.','Toss in the pasta, parmesan and a splash of cooking water until glossy.']},
+'turmeric-cod':{ing:['2 cod fillets','1 tin chickpeas (400g), drained','2 shallots, chopped','15g ginger, grated','2 tbsp tomato purée','200ml chicken stock','1 tsp turmeric'],st:['Heat the oven to 200C (180C fan).','Mix the chickpeas, shallots, ginger, tomato purée, stock, 1 tbsp oil and most of the turmeric in a roasting tin. Bake for 20–25 minutes until bubbling.','Rub the cod with the rest of the turmeric, salt and pepper.','Sit the cod on the chickpeas and bake for 10–12 minutes until it flakes easily.']},
+'cc-flatbread':{ing:['250g cottage cheese','2 eggs','1 tsp dried oregano','Your choice of filling (not priced)'],st:['Heat the oven to 180C (160C fan) and line a tray with baking paper.','Blend the cottage cheese, eggs and oregano until smooth. Spread thinly into a rectangle on the paper.','Bake for 35–40 minutes until golden and firm. Leave to cool for 10 minutes.','Peel off the paper, fill and roll up like a wrap.']},
+'beef-stirfry':{ing:['2 rump or sirloin steaks','150g egg noodles','2 red peppers, sliced','3 tbsp soy sauce','1 lime, juiced','1 tsp brown sugar','Handful of coriander'],st:['Mix the soy, lime and sugar. Season the steaks and fry in a hot pan for 2 minutes each side. Rest on a plate.','Cook the noodles following the pack and drain.','Stir-fry the peppers in 1 tbsp oil for 3 minutes, then add the noodles and half the sauce.','Slice the steak thinly, lay it on top and pour over the rest of the sauce and coriander.']},
+'marry-me':{ing:['2 chicken breasts','2 garlic cloves, crushed','60g sun-dried tomatoes, chopped','150ml double cream (or light cooking cream)','30g parmesan, grated','Handful of spinach'],st:['Season the chicken and fry in 1 tbsp oil over a medium-high heat for 5–6 minutes each side until cooked through. Set aside.','In the same pan, fry the garlic and sun-dried tomatoes for 1 minute.','Add the cream and parmesan and simmer for 2 minutes. Stir in the spinach until wilted.','Return the chicken to the pan and spoon the sauce over.']},
+'chicken-satay':{ing:['400g chicken thighs, diced','3 tbsp peanut butter','1 tin light coconut milk (400ml)','2 tbsp soy sauce','1 tbsp curry powder','1 pouch microwave rice (250g)'],st:['Put everything except the rice into the slow cooker and stir well.','Cook on low for 4–5 hours or high for 2–3 hours, until the chicken is tender.','Stir and add a splash of water if it is too thick.','Serve over the rice.']},
+'smash-tacos':{ing:['250g beef mince','4 small tortillas','40g grated cheddar','Shredded lettuce','1 gherkin, sliced','2 tbsp burger sauce'],st:['Divide the mince into 4 and press each ball thinly onto a tortilla, right to the edges. Season.','Put meat-side down in a hot dry pan and cook for 3 minutes until crispy.','Flip, add cheese and cook 1–2 minutes until the tortilla is golden.','Top with lettuce, gherkin and burger sauce, then fold.']},
+'cc-icecream':{ing:['300g cottage cheese','200g frozen berries','2 tbsp honey'],st:['Blend everything until completely smooth.','Spread into a tub and freeze for 2–3 hours, stirring once halfway.','Leave out for 10 minutes before scooping.']},
+'cowboy-caviar':{ing:['1 tin black beans (400g), drained','1 tin sweetcorn (200g), drained','1 red pepper, diced','2 tomatoes, diced','½ red onion, diced','1 lime, juiced'],st:['Put all the veg and beans into a big bowl.','Add the lime juice, 2 tbsp oil and a good pinch of salt and pepper.','Stir well and leave for 10 minutes for the flavours to mix.','Serve with tortilla chips or as a side.']},
+'cucumber-salad':{ing:['1 cucumber, thinly sliced','1 tbsp soy sauce','1 tsp sesame oil','1 tsp rice vinegar (or white wine vinegar)','1 tsp chilli oil','1 tsp sesame seeds'],st:['Put the cucumber into a large jar or tub with a lid.','Add everything else.','Put the lid on and shake hard for 20 seconds. Eat straight away.']},
+'piri-piri':{ing:['4 chicken thighs (bone in)','500g baby potatoes, halved','1 red pepper, chopped','1 red onion, cut into wedges','2 tbsp piri piri seasoning'],st:['Heat the oven to 200C (180C fan).','Toss everything with 2 tbsp oil and the seasoning in a large roasting tin.','Roast for 40–45 minutes, turning once, until the chicken is cooked through and the potatoes are crisp.']},
+'dan-dan':{ing:['2 nests of noodles','2 tbsp peanut butter or tahini','2 tbsp soy sauce','1 tbsp chilli oil','1 tsp sugar','1 garlic clove, crushed','2 spring onions, sliced'],st:['Cook the noodles following the pack. Save a few spoons of the water.','Mix the peanut butter, soy, chilli oil, sugar and garlic with 3 tbsp noodle water until smooth.','Toss the drained noodles in the sauce and top with spring onions.']},
+'baked-oats':{ing:['80g oats','1 banana','2 eggs','150g Greek yoghurt','1 scoop protein powder (optional)','1 tsp baking powder'],st:['Heat the oven to 180C (160C fan).','Blend everything until smooth.','Pour into 2 small ovenproof dishes and bake for 20–25 minutes until risen and set.']},
+'tofu-pancakes':{ing:['300g silken tofu','100g plain flour','1 tsp baking powder','100ml plant milk','1 tbsp maple syrup'],st:['Blend everything until smooth.','Heat a non-stick pan over a medium heat with a little oil.','Add small ladles of batter and cook for 2–3 minutes until bubbles appear, then flip for 1–2 minutes.','Serve with fruit and a little more syrup.']},
+'chipotle-steak':{ing:['2 steaks (rump or sirloin)','2 sweet potatoes, cubed','100ml light cooking cream','1 tbsp chipotle paste','1 garlic clove, crushed'],st:['Heat the oven to 200C (180C fan). Roast the sweet potato with 1 tbsp oil for 25–30 minutes.','Season the steaks and fry in a hot pan for 2–4 minutes each side. Rest on a board.','Turn the heat down. Add the garlic, chipotle and cream to the pan and bubble for 1 minute.','Slice the steak and serve with the potatoes and sauce.']},
+'chickpea-curry':{ing:['1 tin chickpeas (400g), drained','150g silken tofu','1 tin chopped tomatoes (400g)','2 tbsp tikka paste','1 onion, chopped','1 pouch microwave rice (250g)'],st:['Fry the onion in 1 tbsp oil for 5 minutes. Add the curry paste for 1 minute.','Blend the tomatoes with the tofu until smooth.','Add the sauce and chickpeas to the pan and simmer for 15 minutes.','Serve with the rice.']},
+'lemon-tofu':{ing:['280g firm tofu, cubed','2 tbsp cornflour','1 lemon (zest and juice)','2 tbsp honey or maple syrup','1 tbsp soy sauce','1 tsp black pepper'],st:['Toss the tofu in the cornflour. Fry in 2 tbsp oil over a medium-high heat for 8–10 minutes until crisp all over.','Mix the lemon, honey, soy and black pepper.','Pour into the pan and bubble for 1–2 minutes until glossy.','Serve with rice and greens.']},
+'smashed-pots':{ing:['500g baby potatoes','2 garlic cloves, crushed','30g butter, melted','30g parmesan, grated'],st:['Boil the potatoes for 15–20 minutes until tender. Drain and let them steam dry.','Heat the oven to 220C (200C fan). Spread the potatoes on a tray and squash each one flat with a glass.','Mix the butter and garlic, brush over and season.','Roast for 20–25 minutes until crisp, add the parmesan and roast 3 more minutes.']},
+'baked-cod':{ing:['2 cod fillets','200g cherry tomatoes, halved','1 tbsp capers','Handful of basil','1 lemon'],st:['Heat the oven to 200C (180C fan).','Put the tomatoes and capers into a dish with 1 tbsp oil and roast for 10 minutes.','Nestle in the cod, season and squeeze over half the lemon.','Bake for 12–15 minutes until the fish flakes. Scatter over the basil.']},
+'grinder':{ing:['2 sub rolls','100g salami or mixed Italian meats','2 slices provolone or mozzarella','½ iceberg lettuce, shredded','2 tbsp mayonnaise','1 tbsp red wine vinegar','Pinch of oregano'],st:['Mix the lettuce with the mayonnaise, vinegar and oregano.','Split the rolls and layer in the meat and cheese.','Toast under the grill for 2 minutes if you like it warm.','Pile in the salad and press closed.']},
+'tuna-linguine':{ing:['250g linguine','1 tin tuna (200g), drained','1 red chilli, chopped','½ lemon, juiced','Handful of parsley, chopped'],st:['Cook the linguine following the pack and drain.','Warm 3 tbsp oil in the pan with the chilli for 1 minute.','Add the pasta, tuna, lemon juice and parsley and toss until hot.']},
+'onion-boil':{ing:['2 large onions','30g butter','1 tsp Cajun seasoning','1 garlic clove, crushed'],st:['Heat the oven to 200C (180C fan).','Peel the onions, trim the root flat and cut a cross into the top, about ¾ of the way down.','Mix the butter, Cajun and garlic and push into the cuts.','Wrap each in foil and bake for 50–60 minutes until soft.']},
+'fajitas':{ing:['2 chicken breasts, sliced','2 peppers, sliced','1 red onion, sliced','1 tbsp fajita seasoning','4 tortillas','1 avocado, mashed with lime'],st:['Toss the chicken, peppers and onion with the seasoning and 1 tbsp oil.','Fry in a hot pan for 8–10 minutes until the chicken is cooked through and the veg is charred.','Warm the tortillas.','Fill with the chicken mixture and the mashed avocado.']},
+'pasta-chips':{ing:['200g dried pasta (penne or bow ties)','1 tbsp olive oil','30g parmesan, grated','1 tsp garlic powder'],st:['Cook the pasta for 2 minutes less than the pack says. Drain well.','Toss with the oil, parmesan and garlic powder.','Air fry at 200C for 10–12 minutes, shaking twice, until crunchy.','Serve with marinara or salsa to dip.']},
+'boursin':{ing:['1 Boursin round (150g)','300g cherry tomatoes','200g dried pasta','Handful of spinach'],st:['Heat the oven to 200C (180C fan). Put the Boursin in a dish surrounded by the tomatoes. Drizzle with oil and season.','Bake for 25 minutes. Meanwhile cook the pasta.','Mash the cheese and tomatoes together.','Stir through the pasta and spinach with a splash of pasta water.']},
+'onion-toast':{ing:['2 onions, thinly sliced','15g butter','1 tsp sugar','2 thick slices of bread','40g cheddar, grated'],st:['Cook the onions in the butter and 1 tbsp oil over a low heat for 20–25 minutes, stirring often, until golden and sticky. Add the sugar for the last 5 minutes.','Toast the bread.','Pile the onions onto the toast and top with the cheese.','Grill for 2 minutes until bubbling.']},
+'paneer-rice':{ing:['200g paneer, cubed','150g basmati rice','100g frozen peas','100g mangetout','300ml vegetable stock','1 tsp garam masala','Handful of coriander'],st:['Heat the oven to 190C (170C fan).','Mix the rice, stock, garam masala and peas in an ovenproof dish. Cover with foil and bake for 25 minutes.','Fry the paneer in 1 tbsp oil until golden.','Stir the paneer and mangetout into the rice and bake for 5 minutes more. Top with coriander.']},
+'egg-pizza':{ing:['2 eggs','2 slices of bread','2 tbsp passata or pizza sauce','40g grated mozzarella','Pepperoni or veg (optional)'],st:['Beat the eggs in a bowl and pour into a non-stick pan over a medium heat.','Immediately press the bread slices into the egg side by side.','Once the egg sets (about 2 minutes), flip it all over so the egg is on top.','Spread with sauce, add cheese and toppings, cover with a lid and cook 2–3 minutes until melted.']},
+'overnight-oats':{ing:['80g oats','200g Greek yoghurt','200ml milk','1 scoop protein powder','Handful of berries'],st:['Mix the oats, yoghurt, milk and protein powder in two jars.','Top with the berries.','Cover and chill overnight. Keeps for 3 days.']},
+'tiktok-spag':{ing:['2 chicken breasts, cubed','2 tbsp plain flour','1 onion, chopped','2 garlic cloves, crushed','200ml chicken stock','100ml double cream','40g parmesan','200g spaghetti'],st:['Cook the spaghetti following the pack.','Toss the chicken in the flour and season. Fry in 1 tbsp oil for 6–8 minutes until golden and cooked through.','Add the onion and garlic for 3 minutes, then the stock and cream. Simmer for 3 minutes.','Stir in the parmesan and spaghetti until coated.']},
+'protein-bars':{ing:['150g oats','2 scoops protein powder','2 bananas, mashed','100g peanut butter','2 tbsp seeds'],st:['Line a small tin with baking paper. Heat the oven to 180C (160C fan).','Mix everything together until it forms a sticky dough.','Press into the tin and bake for 15–20 minutes until set.','Cool completely, then cut into 8 bars.']},
+'cc-queso':{ing:['250g cottage cheese','60g cheddar, grated','½ tsp paprika','½ tsp garlic powder','2 tbsp salsa'],st:['Blend the cottage cheese until smooth.','Warm it in a small pan over a low heat with the cheddar, paprika and garlic powder, stirring until melted.','Swirl in the salsa and serve with tortilla chips.']},
+'thai-basil-beef':{ing:['250g beef stir-fry strips','1 tbsp red Thai curry paste','160ml coconut cream','2 tbsp soy sauce','1 pak choi, chopped','Handful of Thai basil or mint'],st:['Stir-fry the beef in 1 tbsp oil over a high heat for 2–3 minutes. Remove.','Add the pak choi and curry paste and stir-fry for 2 minutes.','Pour in the coconut cream and soy and bubble for 2 minutes.','Return the beef, toss through the basil and serve with rice.']},
+'black-pepper-beef':{ing:['250g beef strips','1 tbsp cracked black pepper','2 tbsp soy sauce','2 tbsp oyster sauce','1 green pepper, sliced','1 pouch microwave rice (250g)','2 eggs'],st:['Toss the beef with the black pepper and 1 tbsp soy.','Stir-fry in a hot pan with 1 tbsp oil for 2 minutes, then add the pepper and oyster sauce for 2 minutes. Remove.','In the same pan, scramble the eggs, add the rice and the rest of the soy and fry for 3 minutes.','Serve the beef on the egg fried rice.']},
+'curried-cod':{ing:['2 cod fillets','½ cauliflower, cut into florets','1 tin chickpeas (400g), drained','1 tbsp curry powder','1 tsp turmeric','30g butter'],st:['Heat the oven to 200C (180C fan).','Toss the cauliflower and chickpeas with the turmeric, half the curry powder, 1 tbsp oil and salt. Roast for 20 minutes.','Melt the butter with the rest of the curry powder and brush over the cod.','Add the cod to the tray and roast for 12–15 minutes until it flakes.']},
+'black-bean-beef':{ing:['250g rump steak, sliced','2 peppers (1 red, 1 green), sliced','1 onion, sliced','3 tbsp black bean sauce','1 garlic clove, crushed','1 pouch microwave rice (250g)'],st:['Stir-fry the beef in 1 tbsp oil over a high heat for 2 minutes. Remove.','Add the onion and peppers and stir-fry for 4 minutes.','Add the garlic and black bean sauce with 2 tbsp water and return the beef.','Toss for 1 minute and serve with the rice.']},
+'spicy-salmon-potato':{ing:['2 salmon fillets','400g new potatoes, halved','1 tbsp gochujang','1 tbsp soy sauce','1 lime','2 pak choi, halved'],st:['Heat the oven to 200C (180C fan). Roast the potatoes with 1 tbsp oil for 20 minutes.','Mix the gochujang, soy and lime juice and spread over the salmon.','Add the salmon and pak choi to the tray and roast for 12–15 minutes.']},
+'tuna-lemon-spag':{ing:['200g spaghetti','1 tin tuna (145g), drained','1 red chilli, chopped','1 lemon (zest and juice)','Handful of parsley'],st:['Cook the spaghetti following the pack. Save a mug of cooking water.','Warm 2 tbsp oil with the chilli for 1 minute.','Add the spaghetti, tuna, lemon and parsley with a splash of cooking water and toss until glossy.']},
+'asian-salmon-swp':{ing:['2 salmon fillets','2 sweet potatoes, cubed','200ml light coconut milk','1 red chilli, sliced','1 lime','1 tbsp soy sauce'],st:['Heat the oven to 190C (170C fan). Roast the sweet potato with 1 tbsp oil for 20 minutes.','Pour in the coconut milk and add the salmon and chilli.','Bake for 15 minutes until the salmon flakes.','Squeeze over the lime and drizzle with soy.']}
+};
+{ const SV = {'protein-bars':8,'salmon-rice':1,'pesto-eggs':1,'egg-pizza':1,'cucumber-salad':1}; for (const r of LIB) if (SV[r.id]) r.sv = SV[r.id]; }
+Object.assign(BUILT, {
+'n-roast-chicken-traybake':{ing:['4 chicken thighs (bone in)','400g baby potatoes, halved','1 red onion, cut into wedges','2 garlic cloves, crushed','1 tsp paprika','1 tsp dried thyme','1 lime'],st:['Heat the oven to 200C (180C fan).','Toss the chicken, potatoes and onion in a roasting tin with 1 tbsp oil, the garlic, paprika, thyme and a good pinch of salt. Sit the chicken skin-side up.','Roast for 55–65 minutes, turning the potatoes once, until the skin is crisp and the juices run clear.','Squeeze over the lime to serve.']},
+'n-griddled-chicken':{ing:['2 chicken breasts','1 lemon (zest and juice)','1 tsp dried thyme','1 garlic clove, crushed','100g houmous','40g olives','100g spinach'],st:['Slice each chicken breast in half through the middle so you have thinner pieces.','Mix the lemon, thyme, garlic and 1 tbsp oil with salt and pepper and coat the chicken.','Cook on a hot griddle or frying pan for 4–5 minutes each side until cooked through with no pink.','Serve on the spinach with the houmous and olives.']},
+'n-fruity-curry-traybake':{ing:['2 chicken breasts','2 tbsp curry paste','1 tbsp mango chutney','100g natural yoghurt','1 onion, cut into wedges','1 red pepper, chopped','1 tin chickpeas (400g), drained','Handful of coriander'],st:['Heat the oven to 200C (180C fan). Mix the curry paste, chutney and half the yoghurt, then coat the chicken.','Toss the onion, pepper and chickpeas with 1 tbsp oil in a roasting tin and sit the chicken on top.','Bake for 25 minutes until the chicken is cooked through.','Drizzle with the rest of the yoghurt and scatter with coriander.']},
+'n-easy-chicken-curry':{ing:['300g chicken thighs, diced','1 onion, finely chopped','2 tbsp curry paste','1 baking potato, cut into small cubes','1 tin chopped tomatoes (400g)','100g spinach'],st:['Fry the onion in 1 tbsp oil for 5 minutes. Add the chicken and brown for 5 minutes.','Stir in the curry paste for 1 minute.','Add the potato, tomatoes and 150ml water. Cover and simmer for 25–30 minutes until the potato is tender and the chicken is cooked through.','Stir in the spinach until wilted.']},
+'n-chicken-pesto-pasta':{ing:['2 chicken breasts','150g dried pasta','2 tbsp pesto','100g green beans','100g cherry tomatoes, halved','1 garlic clove, crushed','Handful of spinach'],st:['Cook the pasta following the pack, adding the green beans for the last 4 minutes. Save a mug of the water, then drain.','Flatten the chicken a little, season and fry in 1 tbsp oil with the garlic for 4–5 minutes each side until cooked through. Add the tomatoes for the last 2 minutes.','Toss the pasta and beans with the pesto, spinach and a splash of the water.','Slice the chicken and serve on top with the tomatoes.']},
+'n-crispy-chicken-tzatziki':{ing:['4 chicken thighs (bone in)','1 pouch microwave rice (250g)','1 tin chickpeas (400g), drained','1 tsp paprika','1 tsp cumin','150g Greek yoghurt','½ cucumber, grated','1 garlic clove, crushed','½ lemon'],st:['Rub the chicken with the paprika, cumin and salt. Put skin-side down in a cold frying pan and cook over a medium heat for 12–15 minutes until the skin is crisp.','Turn and cook for 10 minutes more until cooked through. Lift out.','Fry the chickpeas and rice in the chicken fat for 4–5 minutes.','Squeeze the water out of the cucumber and mix with the yoghurt, garlic and lemon juice. Serve everything together.']},
+'n-satay-one-pot-rice':{ing:['2 chicken breasts, cubed','1 onion, chopped','1 red pepper, chopped','2 garlic cloves, crushed','150g basmati rice','1 tbsp curry powder','2 tbsp peanut butter','1 tbsp soy sauce','200ml light coconut milk','200ml chicken stock','1 lime'],st:['Fry the onion and pepper in 1 tbsp oil for 5 minutes in a pan with a lid.','Add the chicken, garlic and curry powder and cook for 3 minutes.','Stir in the rice, peanut butter, soy, coconut milk and stock. Bring to the boil, cover and cook on low for 15 minutes.','Take off the heat and leave covered for 5 minutes. Check the chicken is cooked through, then squeeze over the lime.']},
+'n-steamed-chicken-bowl':{ing:['2 chicken breasts','1 pouch microwave rice (250g)','15g ginger, sliced','2 spring onions, sliced','1 tbsp peanut butter (or tahini)','1 tbsp soy sauce','1 tsp sesame oil','1 tsp rice vinegar','1 tsp sesame seeds','½ lemon','Handful of coriander'],st:['Put the chicken in a pan with the ginger and half the spring onions. Just cover with water, put a lid on and simmer gently for 12–15 minutes until cooked through.','Mix the peanut butter, soy, sesame oil, vinegar and lemon juice with 2 tbsp of the cooking liquid.','Heat the rice following the pouch. Slice the chicken and lay it on top.','Spoon over the dressing and finish with the remaining spring onions, sesame seeds and coriander.']},
+'n-beef-ginger':{ing:['250g beef stir-fry strips','15g ginger, grated','2 garlic cloves, crushed','1 green pepper, sliced','2 spring onions, sliced','1 tbsp soy sauce','1 lime, juiced','Handful of basil','1 pouch microwave rice (250g)'],st:['Mix the beef with the soy and half the ginger while you prepare the rest.','Stir-fry the beef in 1 tbsp oil over a high heat for 2 minutes, then lift out.','Stir-fry the pepper for 2–3 minutes, then the garlic and remaining ginger for 1 minute.','Return the beef with the lime juice, spring onions and basil. Serve with the rice.']},
+'n-lighter-chilli-beef':{ing:['250g beef stir-fry strips','1 egg (white only)','1 tbsp cornflour','1 tsp five-spice','1 red pepper, sliced','2 spring onions, sliced','2 garlic cloves, crushed','15g ginger, grated','2 tbsp sweet chilli sauce','1 tbsp soy sauce','1 tbsp rice vinegar'],st:['Beat the egg white until frothy and toss with the beef, five-spice, cornflour and pepper.','Heat 2 tbsp oil in a wok until very hot. Stir-fry the beef for 3–4 minutes until crisp, then lift out.','Stir-fry the garlic, ginger, pepper and spring onions for 2–3 minutes.','Add the sweet chilli, soy and vinegar, return the beef and toss for 1 minute.']},
+'n-saucy-beef':{ing:['250g beef stir-fry strips','1 tbsp balsamic vinegar','1 tbsp soy sauce','2 spring onions, sliced','1 red pepper, sliced','1 pouch microwave rice (250g)'],st:['Mix the beef with the vinegar and soy and leave for 20 minutes.','Heat a dry wok until very hot. Add the beef with its marinade and the spring onions and stir-fry for 2 minutes.','Add the pepper and stir-fry for 2 minutes more.','Serve over the rice.']},
+'n-salmon-soy-sesame':{ing:['2 salmon fillets','300g baby potatoes, halved','200g tenderstem broccoli','1 tbsp soy sauce','1 tsp sesame oil','1 tsp honey','1 tsp sesame seeds','½ lime, juiced'],st:['Heat the oven to 200C (180C fan). Roast the potatoes with 1 tbsp oil for 15 minutes.','Add the broccoli and salmon to the tray and roast for 12–15 minutes until the salmon flakes.','Mix the soy, sesame oil, honey and lime juice.','Pour over the tray and sprinkle with sesame seeds.']},
+'n-chicken-salad':{ing:['2 chicken breasts','1 little gem lettuce, torn','150g cherry tomatoes, halved','½ cucumber, sliced','1 avocado, sliced','1 tbsp olive oil','½ lemon, juiced'],st:['Season the chicken and fry in 1 tsp oil over a medium heat for 6–7 minutes each side until cooked through. Rest for 5 minutes.','Toss the lettuce, tomatoes, cucumber and avocado with the olive oil and lemon juice.','Slice the chicken and serve on top.']},
+'n-spicy-chicken-rice':{ing:['2 chicken breasts, sliced','1 tbsp fajita seasoning','1 pouch microwave rice (250g)','200g frozen stir-fry vegetables','2 tbsp sweet chilli sauce'],st:['Toss the chicken in the seasoning.','Fry in 1 tbsp oil over a medium-high heat for 6–8 minutes until cooked through.','Add the vegetables and stir-fry for 3–4 minutes.','Heat the rice following the pouch, top with the chicken and veg and drizzle with sweet chilli.']},
+'n-cod-chickpea-traybake':{ing:['2 cod fillets','1 tin chickpeas (400g), drained','200g cherry tomatoes','1 red onion, cut into wedges','1 tsp paprika','1 lemon','Handful of parsley'],st:['Heat the oven to 200C (180C fan).','Toss the chickpeas, tomatoes and onion in a tin with 1 tbsp oil, the paprika and the juice of half the lemon. Roast for 15 minutes.','Add the cod, season and roast for 10 minutes more until it flakes easily.','Squeeze over the rest of the lemon and scatter with parsley.']},
+'n-chicken-tinga':{ing:['300g chicken thighs','1 onion, sliced','2 garlic cloves, crushed','1 tbsp chipotle paste','1 tin chopped tomatoes (400g)','4 small tortillas','1 avocado, mashed with lime'],st:['Fry the onion in 1 tbsp oil for 5 minutes. Add the garlic and chipotle paste for 1 minute.','Add the tomatoes and whole chicken thighs. Cover and simmer for 20–25 minutes until the chicken is cooked through and tender.','Shred the chicken in the pan with two forks and simmer uncovered for 5 minutes.','Serve in warmed tortillas with the avocado.']}
+});
+for (const r of LIB) if (!r.ing && BUILT[r.id]) { r.ing = BUILT[r.id].ing; r.st = BUILT[r.id].st; r.claudeVer = true; }
+
+const costOf = r => r.ing ? usedCost(r) / cur(r) : (typeof r.cost === 'number' ? r.cost : null);
+const gbp = n => '£' + n.toFixed(2);
+
+/* ---------- prices: average UK supermarket own-brand, standard range ---------- */
+const PR = (k,n,pack,u,p,a,o) => Object.assign({k,n,pack,u,p,a}, o);
+const SPICE = n => PR(new RegExp(n,'i'), n[0].toUpperCase()+n.slice(1), 40,'g',0.95,'C',{cup:true,tsp:3,tbsp:9,l:'jar'});
+const PRICES = [
+ PR(/vinegar/i,'Vinegar',350,'ml',1.00,'C',{cup:true}),
+ PR(/sesame oil/i,'Sesame oil',150,'ml',1.90,'C',{cup:true}),
+ PR(/chilli oil/i,'Chilli oil',150,'ml',2.00,'C',{cup:true}),
+ PR(/olive oil/i,'Olive oil',500,'ml',4.50,'C',{cup:true}),
+ PR(/sweet chilli/i,'Sweet chilli sauce',300,'ml',1.30,'C'),
+ PR(/black bean sauce/i,'Black bean sauce',180,'g',1.50,'C',{l:'jar'}),
+ PR(/oyster sauce/i,'Oyster sauce',150,'ml',1.50,'C',{cup:true}),
+ PR(/soy sauce/i,'Soy sauce',150,'ml',0.85,'C',{cup:true}),
+ PR(/sriracha/i,'Sriracha',200,'ml',1.60,'C',{cup:true}),
+ PR(/burger sauce/i,'Burger sauce',250,'ml',1.20,'C'),
+ PR(/caesar/i,'Caesar dressing',250,'ml',1.30,'C'),
+ PR(/mayonnaise/i,'Mayonnaise',500,'ml',1.20,'C',{cup:true}),
+ PR(/salsa/i,'Salsa',300,'g',1.10,'C',{l:'jar'}),
+ PR(/pesto/i,'Pesto',190,'g',1.25,'C',{l:'jar'}),
+ PR(/passata/i,'Passata',500,'g',0.70,'C'),
+ PR(/tomato pur/i,'Tomato purée',200,'g',0.70,'C',{cup:true,l:'tube'}),
+ PR(/chipotle/i,'Chipotle paste',90,'g',1.85,'C',{l:'jar'}),
+ PR(/gochujang/i,'Gochujang paste',100,'g',2.00,'C',{l:'jar'}),
+ PR(/curry paste|tikka paste/i,'Curry paste',200,'g',1.60,'C',{l:'jar'}),
+ PR(/peanut butter/i,'Peanut butter',340,'g',1.50,'C',{cup:true,l:'jar'}),
+ PR(/honey/i,'Honey',340,'g',1.50,'C',{cup:true,l:'bottle'}),
+ PR(/maple/i,'Maple syrup',250,'ml',3.75,'C',{cup:true}),
+ PR(/seasoning/i,'Seasoning mix (fajita, taco, Cajun or piri piri)',30,'g',0.90,'C',{tsp:3,tbsp:9,l:'sachet'}),
+ ...['oregano','paprika','turmeric','garam masala','curry powder','chilli powder','chilli flakes','garlic powder','black pepper','thyme','cumin','five-spice'].map(SPICE),
+ PR(/sesame seeds/i,'Sesame seeds',100,'g',0.90,'C',{cup:true,tsp:3}),
+ PR(/\bseeds\b/i,'Mixed seeds',200,'g',1.60,'C',{tbsp:10}),
+ PR(/baking powder/i,'Baking powder',170,'g',1.30,'C',{cup:true,l:'tub'}),
+ PR(/protein powder/i,'Protein powder',1000,'g',20.00,'C',{cup:true,l:'1kg tub'}),
+ PR(/sugar/i,'Sugar',500,'g',1.00,'C',{cup:true}),
+ PR(/cornflour/i,'Cornflour',500,'g',1.60,'C',{cup:true,tbsp:8}),
+ PR(/flour/i,'Plain flour',1500,'g',0.90,'C',{cup:true,tbsp:8}),
+ PR(/stock/i,'Stock cubes',5000,'ml',0.90,'C',{cup:true,l:'pack of 10 cubes'}),
+ PR(/houmous/i,'Houmous',200,'g',1.10,'D',{l:'200g tub'}),
+ PR(/olives/i,'Olives',160,'g',1.00,'C',{l:'jar'}),
+ PR(/chutney/i,'Mango chutney',340,'g',1.20,'C',{cup:true,l:'jar'}),
+ PR(/capers/i,'Capers',100,'g',1.10,'C',{l:'jar'}),
+ PR(/sun-dried/i,'Sun-dried tomatoes',280,'g',2.00,'C',{l:'jar'}),
+ PR(/gherkin/i,'Gherkins',10,'ea',1.10,'C',{l:'jar'}),
+ PR(/seaweed/i,'Seaweed snacks',1,'ea',1.50,'C',{l:'pack'}),
+ PR(/coconut cream/i,'Coconut cream',160,'ml',1.00,'C',{l:'160ml tin'}),
+ PR(/coconut milk/i,'Light coconut milk',400,'ml',1.00,'C',{l:'400ml tin'}),
+ PR(/plant milk/i,'Plant milk',1000,'ml',1.00,'D',{l:'1 litre'}),
+ PR(/chopped tomatoes/i,'Chopped tomatoes',400,'g',0.50,'C',{l:'400g tin'}),
+ PR(/kidney beans/i,'Kidney beans',400,'g',0.55,'C',{l:'400g tin'}),
+ PR(/black beans/i,'Black beans',400,'g',0.65,'C',{l:'400g tin'}),
+ PR(/chickpeas/i,'Chickpeas',400,'g',0.60,'C',{l:'400g tin'}),
+ PR(/sweetcorn/i,'Sweetcorn',200,'g',0.60,'C',{l:'200g tin'}),
+ PR(/tuna/i,'Tuna in spring water',145,'g',0.75,'C',{l:'145g tin'}),
+ PR(/noodles/i,'Egg noodles',250,'g',1.00,'C',{each:62}),
+ PR(/microwave rice|cooked rice/i,'Microwave rice',250,'g',0.70,'C',{l:'250g pouch'}),
+ PR(/\brice\b/i,'Basmati rice',1000,'g',1.90,'C'),
+ PR(/pasta|spaghetti|linguine/i,'Dried pasta',500,'g',0.75,'C'),
+ PR(/oats/i,'Porridge oats',1000,'g',1.10,'C'),
+ PR(/tortilla/i,'Tortilla wraps',8,'ea',1.25,'C'),
+ PR(/\brolls\b/i,'Sub rolls',4,'ea',1.20,'C'),
+ PR(/bread|sourdough/i,'Bread',20,'ea',1.40,'C',{l:'800g loaf'}),
+ PR(/chicken mince/i,'Chicken mince',500,'g',3.25,'M'),
+ PR(/turkey mince/i,'Turkey mince',500,'g',3.25,'M'),
+ PR(/lean beef mince/i,'Lean beef mince (5% fat)',500,'g',4.50,'M'),
+ PR(/beef mince/i,'Beef mince',500,'g',3.40,'M'),
+ PR(/beef (stir-fry )?strips/i,'Beef stir-fry strips',250,'g',3.75,'M'),
+ PR(/steak|\brump\b/i,'Rump steak',1,'ea',3.90,'M',{each:225}),
+ PR(/pork chops/i,'Pork chops',4,'ea',4.00,'M'),
+ PR(/salami/i,'Salami',120,'g',1.75,'M'),
+ PR(/cooked chicken/i,'Cooked chicken',150,'g',2.25,'M'),
+ PR(/thighs \(bone/i,'Chicken thighs, bone in',1000,'g',2.90,'M',{each:140}),
+ PR(/chicken thighs/i,'Chicken thigh fillets',500,'g',3.60,'M'),
+ PR(/chicken breast/i,'Chicken breast fillets',320,'g',2.40,'M',{each:160}),
+ PR(/salmon/i,'Salmon fillets',2,'ea',4.50,'M'),
+ PR(/\bcod\b/i,'Cod fillets',2,'ea',3.75,'M',{each:125}),
+ PR(/prawns/i,'Cooked prawns',150,'g',2.50,'M'),
+ PR(/\beggs?\b/i,'Free-range eggs',6,'ea',1.80,'D'),
+ PR(/cottage cheese/i,'Cottage cheese',300,'g',1.10,'D',{l:'300g tub'}),
+ PR(/yoghurt/i,'Greek-style yoghurt',500,'g',1.20,'D',{l:'500g tub'}),
+ PR(/milk/i,'Milk',1136,'ml',1.20,'D',{l:'2 pints'}),
+ PR(/cream/i,'Double cream',150,'ml',0.95,'D'),
+ PR(/butter/i,'Butter',250,'g',2.00,'D',{cup:true}),
+ PR(/parmesan/i,'Parmesan-style cheese',200,'g',3.50,'D'),
+ PR(/mozzarella|provolone/i,'Mozzarella',250,'g',2.20,'D',{each:20}),
+ PR(/feta/i,'Feta',200,'g',1.60,'D'),
+ PR(/boursin/i,'Boursin',150,'g',2.60,'D'),
+ PR(/paneer/i,'Paneer',200,'g',2.00,'D'),
+ PR(/cheddar|cheese/i,'Cheddar',400,'g',3.35,'D'),
+ PR(/silken tofu/i,'Silken tofu',300,'g',1.75,'D'),
+ PR(/tofu/i,'Firm tofu',280,'g',1.90,'D'),
+ PR(/avocado/i,'Avocado',1,'ea',0.85,'F'),
+ PR(/sweet potato/i,'Sweet potatoes',1000,'g',1.25,'F',{each:250,loose:true}),
+ PR(/baby potatoes|new potatoes/i,'Baby potatoes',1000,'g',1.30,'F'),
+ PR(/potato/i,'Baking potatoes',4,'ea',0.90,'F'),
+ PR(/frozen broccoli/i,'Frozen broccoli',900,'g',1.60,'Z'),
+ PR(/broccoli/i,'Tenderstem broccoli',200,'g',1.50,'F'),
+ PR(/green beans/i,'Green beans',200,'g',1.10,'F'),
+ PR(/\bpeas\b/i,'Frozen peas',900,'g',1.35,'Z'),
+ PR(/stir-fry veg/i,'Frozen stir-fry vegetables',600,'g',1.30,'Z'),
+ PR(/berries/i,'Frozen berries',400,'g',2.20,'Z',{handful:60}),
+ PR(/spinach/i,'Spinach',200,'g',1.25,'F',{handful:40,l:'200g bag'}),
+ PR(/cauliflower/i,'Cauliflower',1,'ea',1.15,'F'),
+ PR(/pak choi/i,'Pak choi',2,'ea',1.10,'F'),
+ PR(/mangetout/i,'Mangetout',150,'g',1.20,'F'),
+ PR(/cucumber/i,'Cucumber',1,'ea',0.85,'F'),
+ PR(/lettuce/i,'Lettuce',1,'ea',0.85,'F',{def:0.25}),
+ PR(/cherry tomatoes/i,'Cherry tomatoes',250,'g',0.95,'F'),
+ PR(/tomatoes/i,'Tomatoes',6,'ea',0.95,'F'),
+ PR(/spring onions/i,'Spring onions',8,'ea',0.60,'F',{l:'bunch'}),
+ PR(/red onion/i,'Red onion',1,'ea',0.20,'F'),
+ PR(/shallots/i,'Shallots',8,'ea',1.10,'F',{l:'bag'}),
+ PR(/onions?\b/i,'Onions',1,'ea',0.18,'F'),
+ PR(/garlic/i,'Garlic',10,'ea',0.30,'F',{l:'bulb'}),
+ PR(/ginger/i,'Fresh ginger',100,'g',0.50,'F',{loose:true}),
+ PR(/chilli/i,'Red chillies',4,'ea',0.65,'F'),
+ PR(/peppers?\b/i,'Peppers',1,'ea',0.60,'F'),
+ PR(/lemon/i,'Lemon',1,'ea',0.35,'F'),
+ PR(/lime/i,'Lime',1,'ea',0.30,'F'),
+ PR(/banana/i,'Bananas',1,'ea',0.18,'F'),
+ PR(/basil|mint/i,'Fresh basil',30,'g',0.80,'F',{handful:15}),
+ PR(/coriander/i,'Fresh coriander',30,'g',0.80,'F',{handful:15}),
+ PR(/parsley/i,'Fresh parsley',30,'g',0.80,'F',{handful:15})
+];
+const AISLES = [['F','Fresh'],['M','Meat & fish'],['D','Dairy, eggs & chilled'],['C','Cupboard'],['Z','Frozen']];
+const packLabel = e => e.l || (e.u === 'ea' ? 'pack of ' + e.pack : (e.pack >= 1000 ? e.pack / 1000 + (e.u === 'g' ? 'kg' : ' litre') : e.pack + e.u));
+function priceLine(line){
+  if (/optional|not priced/i.test(line)) return null;
+  const head = line.split(/\s\(?or\s/)[0];
+  const e = PRICES.find(x => x.k.test(head)) || PRICES.find(x => x.k.test(line));
+  if (!e) return null;
+  const s = line.replace(/(\d)\s*½/, '$1.5').replace(/½/g, '0.5').replace(/¼/g, '0.25').replace(/¾/g, '0.75').replace(/(\d)\s*[–-]\s*\d+/, '$1');
+  const num = m => m ? parseFloat(m[1]) : null;
+  const lead = num(s.match(/^\s*(\d+(?:\.\d+)?)/));
+  const gm = s.match(/(\d+(?:\.\d+)?)\s*(kg|g|ml|l)\b/i);
+  let g = gm ? parseFloat(gm[1]) * (/^(kg|l)$/i.test(gm[2]) ? 1000 : 1) : null;
+  if (g != null && lead != null && /each\)/.test(s)) g *= lead;
+  let amt;
+  if (e.u === 'ea') amt = g != null && e.each ? g / e.each : (lead != null ? lead : (e.def || 1));
+  else if (g != null) amt = g;
+  else if (/tbsp/.test(s)) amt = (num(s.match(/(\d+(?:\.\d+)?)\s*tbsp/)) || 1) * (e.tbsp || 15);
+  else if (/tsp/.test(s)) amt = (num(s.match(/(\d+(?:\.\d+)?)\s*tsp/)) || 1) * (e.tsp || 5);
+  else if (/scoop/i.test(s)) amt = (lead || 1) * 30;
+  else if (/handful/i.test(s)) amt = e.handful || 30;
+  else if (/knob/i.test(s)) amt = 10;
+  else if (/pinch/i.test(s)) amt = 1;
+  else if (lead != null) amt = lead * (e.each || e.pack);
+  else amt = e.handful || 30;
+  return {e, amt, cost: amt / e.pack * e.p};
+}
+const usedCost = r => r.ing ? r.ing.reduce((a, l) => { const x = priceLine(l); return a + (x ? x.cost : 0); }, 0) * fac(r) : null;
+const fmtAmt = (e, a) => e.u === 'ea' ? (a === 0.5 ? '½' : a === 0.25 ? '¼' : String(Math.round(a * 10) / 10)) : (a >= 1000 ? Math.round(a / 100) / 10 + (e.u === 'g' ? 'kg' : 'l') : Math.round(a) + e.u);
+function shopFor(rs){
+  const m = new Map(), noIng = [];
+  for (const r of rs) {
+    if (!r.ing) { noIng.push(r.n); continue; }
+    for (const l of r.ing) { const x = priceLine(l); if (!x) continue; const o = m.get(x.e.n) || {e:x.e, amt:0, n:0}; o.amt += x.amt * fac(r); o.n++; m.set(x.e.n, o); }
+  }
+  const items = [...m.values()].map(o => {
+    const packs = o.e.loose ? null : Math.max(1, Math.ceil(o.amt / o.e.pack - 1e-9));
+    const cost = o.e.loose ? o.amt / o.e.pack * o.e.p : packs * o.e.p;
+    return {...o, packs, cost, name:o.e.n, cup:!!o.e.cup, a:o.e.a,
+      sub: 'need ' + fmtAmt(o.e, o.amt) + ' · ' + (o.e.loose ? 'buy loose' : o.e.u === 'ea' && o.e.pack === 1 && !o.e.l ? 'buy ' + packs + ' at ' + gbp(o.e.p) + ' each' : 'buy ' + packs + ' × ' + packLabel(o.e) + ' at ' + gbp(o.e.p))};
+  });
+  const buy = items.filter(i => !i.cup), cup = items.filter(i => i.cup);
+  return {buy, cup, noIng, total: buy.reduce((a, i) => a + i.cost, 0), cupTotal: cup.reduce((a, i) => a + i.cost, 0)};
+}
+
+/* ---------- nutrition: [kcal, protein g] per 100g/100ml, or per item for things sold singly ---------- */
+const NUT = {'Houmous':[300,7],'Olives':[150,1],'Mango chutney':[240,0.5],'Thyme':[300,10],'Cumin':[300,10],'Five-spice':[300,10],'Vinegar':[20,0],'Sesame oil':[820,0],'Chilli oil':[800,0],'Olive oil':[820,0],'Sweet chilli sauce':[230,0.5],'Black bean sauce':[110,3],'Oyster sauce':[110,2],'Soy sauce':[60,8],'Sriracha':[100,2],'Burger sauce':[400,1],'Caesar dressing':[450,2],'Mayonnaise':[680,1],'Salsa':[35,1.5],'Pesto':[420,5],'Passata':[30,1.5],'Tomato purée':[90,4.5],'Chipotle paste':[130,2.5],'Gochujang paste':[220,5],'Curry paste':[180,3],'Peanut butter':[600,25],'Honey':[320,0.3],'Maple syrup':[350,0],'Seasoning mix (fajita, taco, Cajun or piri piri)':[300,8],'Oregano':[300,10],'Paprika':[300,10],'Turmeric':[300,10],'Garam masala':[300,10],'Curry powder':[300,10],'Chilli powder':[300,10],'Chilli flakes':[300,10],'Garlic powder':[300,10],'Black pepper':[300,10],'Sesame seeds':[600,18],'Mixed seeds':[580,25],'Baking powder':[100,0],'Protein powder':[380,75],'Sugar':[400,0],'Cornflour':[355,0.5],'Plain flour':[350,10],'Stock cubes':[4,0.2],'Capers':[25,2],'Sun-dried tomatoes':[200,4],'Gherkins':[5,0.2],'Seaweed snacks':[30,1.5],'Coconut cream':[200,2],'Light coconut milk':[75,0.8],'Plant milk':[40,1],'Chopped tomatoes':[22,1.2],'Kidney beans':[60,4.5],'Black beans':[65,4.5],'Chickpeas':[70,4.3],'Sweetcorn':[65,2],'Tuna in spring water':[75,17.5],'Egg noodles':[355,12],'Microwave rice':[150,3],'Basmati rice':[350,8],'Dried pasta':[355,12.5],'Porridge oats':[375,11],'Tortilla wraps':[150,4.5],'Sub rolls':[220,8],'Bread':[95,3.5],'Chicken mince':[130,19],'Turkey mince':[140,21],'Lean beef mince (5% fat)':[125,21],'Beef mince':[220,18],'Beef stir-fry strips':[120,22],'Rump steak':[280,49],'Pork chops':[280,30],'Salami':[380,22],'Cooked chicken':[150,28],'Chicken thighs, bone in':[150,11.5],'Chicken thigh fillets':[135,19],'Chicken breast fillets':[106,24],'Salmon fillets':[250,24.5],'Cod fillets':[100,22],'Cooked prawns':[70,15.5],'Free-range eggs':[72,6.3],'Cottage cheese':[100,11],'Greek-style yoghurt':[120,4.5],'Milk':[47,3.5],'Double cream':[450,1.6],'Butter':[740,0.6],'Parmesan-style cheese':[400,33],'Mozzarella':[290,23],'Feta':[265,15],'Boursin':[400,7],'Paneer':[300,19],'Cheddar':[415,25],'Silken tofu':[55,5],'Firm tofu':[125,13],'Avocado':[240,3],'Sweet potatoes':[86,1.6],'Baby potatoes':[75,1.8],'Baking potatoes':[195,5],'Frozen broccoli':[30,3],'Tenderstem broccoli':[35,3.5],'Green beans':[30,2],'Frozen peas':[75,5.5],'Frozen stir-fry vegetables':[35,2],'Frozen berries':[40,0.8],'Spinach':[23,2.8],'Cauliflower':[150,12],'Pak choi':[15,1.8],'Mangetout':[35,3],'Cucumber':[50,2.5],'Lettuce':[35,2],'Cherry tomatoes':[20,0.9],'Tomatoes':[16,0.7],'Spring onions':[5,0.3],'Red onion':[45,1.2],'Shallots':[20,0.6],'Onions':[50,1.4],'Garlic':[4,0.2],'Fresh ginger':[80,1.8],'Red chillies':[6,0.3],'Peppers':[40,1.5],'Lemon':[15,0.3],'Lime':[10,0.2],'Bananas':[105,1.3],'Fresh basil':[30,3],'Fresh coriander':[30,3],'Fresh parsley':[30,3]};
+const serv = r => r.sv || 2;
+/* how many you are cooking for: 1 or 2. Batch recipes (more than 2) are not scaled. */
+let people = 2;
+try { if (localStorage.getItem('rr-people') === '1') people = 1; } catch(e){}
+const cur = r => serv(r) > 2 ? serv(r) : people;
+const fac = r => cur(r) / serv(r);
+const servLabel = r => serv(r) > 2 ? 'Makes ' + serv(r) : 'Serves ' + cur(r);
+const fq = n => { if (n >= 10) return String(Math.round(n)); const q = Math.round(n * 4) / 4; if (q === 0) return '⅛'; const w = Math.floor(q), f = q - w; return (w ? w : '') + (f === 0.25 ? '¼' : f === 0.5 ? '½' : f === 0.75 ? '¾' : ''); };
+function scaleText(line, f){
+  if (f === 1) return line;
+  let first = true; const only1 = /each\)/.test(line);
+  const out = line.replace(/(?:(\d+)\s?)?([½¼¾])|(\d+(?:\.\d+)?)(?!\.?\d|\s*%)/g, (m, w, g, d) => {
+    if (only1 && !first) return m; first = false;
+    const v = g ? (w ? +w : 0) + (g === '½' ? 0.5 : g === '¼' ? 0.25 : 0.75) : +d;
+    return fq(v * f);
+  });
+  return out.replace(/^½ egg\b/, '1 small egg')
+    .replace(/\b1 ((?:[a-z-]+ ){0,3}?)(rolls|slices|cloves|fillets|breasts|peppers|eggs|onions|steaks|chops|tortillas|wraps|scoops|bananas|shallots|thighs|nests|tins|tomatoes|potatoes)\b/gi, (m, mid, n) => '1 ' + mid + n.replace(/oes$/, 'o').replace(/s$/, ''))
+    .replace(/\b([2-9]) ((?:[a-z-]+ ){0,2}?)(fillet|tin|pack|slice|egg|pouch)\b/gi, (m, c, mid, n) => c + ' ' + mid + n + (n === 'pouch' ? 'es' : 's'));
+}
+function peopleToggle(){
+  const b = n => el('button', {class:'chip' + (people === n ? ' on' : ''), onclick:() => { people = n; try { localStorage.setItem('rr-people', String(n)); } catch(e){} render(); }}, n === 1 ? 'Just me (1)' : 'Two (2)');
+  return el('div', {class:'row', style:'align-items:center;margin-bottom:12px;flex-wrap:wrap'}, el('span', {style:'font-weight:600;font-size:14px'}, 'Cooking for'), b(1), b(2));
+}
+function nutOf(r){
+  if (!r.ing) return null;
+  let k = 0, p = 0;
+  for (const l of r.ing) { const x = priceLine(l); if (!x) continue; const n = NUT[x.e.n]; if (!n) continue; const f = x.e.u === 'ea' ? x.amt : x.amt / 100; k += n[0] * f; p += n[1] * f; }
+  let oil = 0;
+  for (const st of r.st || []) for (const m of st.matchAll(/(\d+)\s*(tbsp|tsp)\s+(?:of\s+)?oil/g)) oil += parseInt(m[1]) * (m[2] === 'tbsp' ? 120 : 40);
+  const s = serv(r);
+  return {kcal: Math.round((k + oil) / s / 10) * 10, protein: Math.round(p / s), oil: Math.round(oil / s)};
+}
+
+const TAGS = ['High protein','Quick','Veggie','Vegan','Breakfast','Lunch','Dinner','Sweet','Meal prep','Budget'];
+const SRC_CHIPS = [['all','All'],['reels','Reels'],...Object.entries(WEB).map(([k,v]) => [k, v.n])];
+const TINTS = ['#FDE8D5','#FFF0CC','#E3F1E6','#EAF3D9','#FCEBD8','#DDEFE3','#FBE3C8'];
+
+/* ---------- state ---------- */
+let S = {picks:[],extra:[]};
+try { const raw = JSON.parse(document.getElementById('state').textContent); if (raw && Array.isArray(raw.picks)) S = {picks:raw.picks, extra:Array.isArray(raw.extra)?raw.extra:[]}; } catch(e){}
+try { const raw = JSON.parse(localStorage.getItem('rr-picks') || 'null'); if (raw && Array.isArray(raw.picks)) S = {picks:raw.picks, extra:Array.isArray(raw.extra)?raw.extra:[]}; } catch(e){}
+
+let tab = location.hash === '#picks' ? 'picks' : location.hash === '#cook' ? 'cook' : location.hash === '#favs' ? 'favs' : 'discover';
+let recipes = {}, recipeBusy = {};
+try { recipes = JSON.parse(localStorage.getItem('rr-recipes') || '{}') || {}; } catch(e){}
+let filter = 'All', srcFilter = 'all';
+let found = [];
+let artifactNs = null, sampleNs = null, saveTimer = null, saveNote = '';
+let favs = [], favExtra = [];
+try { const f = JSON.parse(localStorage.getItem('rr-favs') || 'null'); if (f && Array.isArray(f.ids)) { favs = f.ids; favExtra = Array.isArray(f.extra) ? f.extra : []; } } catch(e){}
+function toggleFav(r){
+  const i = favs.indexOf(r.id);
+  if (i >= 0) { favs.splice(i, 1); favExtra = favExtra.filter(x => x.id !== r.id); }
+  else { favs.push(r.id); if (!LIB.some(x => x.id === r.id)) favExtra.push({...r, isNew:false}); }
+  try { localStorage.setItem('rr-favs', JSON.stringify({ids:favs, extra:favExtra})); } catch(e){}
+  render();
+}
+let budget = null, cheapFirst = false;
+try { const b = parseFloat(localStorage.getItem('rr-budget')); if (b > 0) budget = b; cheapFirst = localStorage.getItem('rr-cheap') === '1'; } catch(e){}
+function picksCost(){ const rs = pickedRecipes(); return {t: shopFor(rs).total, missing: rs.filter(r => !r.ing).length}; }
+function budgetLine(){
+  const {t, missing} = picksCost(), n = S.picks.length;
+  const parts = [n ? `${n} meal${n === 1 ? '' : 's'} this week: about ${gbp(t)} at the till` : 'Nothing in your week yet'];
+  let over = false;
+  if (budget) { const left = budget - t; over = left < 0; parts.push(over ? `${gbp(-left)} over budget` : `${gbp(left)} left`); }
+  if (missing) parts.push(`${missing} without a price`);
+  return {text: parts.join(' · '), over, pct: budget ? Math.min(100, t / budget * 100) : 0};
+}
+function paintTally(){
+  const t = document.getElementById('tally'); if (!t) return;
+  const {t: total} = picksCost(), n = S.picks.length;
+  const left = el('span', {}, el('b', {}, 'Shop total: about ' + gbp(total)), n + ' meal' + (n === 1 ? '' : 's') + ' this week · whole packs, cupboard staples not counted');
+  let right = 'Set a budget ↑', over = false;
+  if (budget) { const d = budget - total; over = d < 0; right = over ? gbp(-d) + ' over ' + gbp(budget) : gbp(d) + ' left of ' + gbp(budget); }
+  t.replaceChildren(left, el('span', {class:'r'}, right));
+  t.className = 'tally' + (over ? ' over' : '');
+}
+function budgetPanel(){
+  const input = el('input', {type:'text', inputmode:'decimal', id:'budgetIn', placeholder:'e.g. 30', value: budget ? String(budget) : '', style:'max-width:110px'});
+  const line = el('div', {class:'by', id:'budgetLine', style:'margin-top:8px'});
+  const fill = el('i', {});
+  const bar = el('div', {class:'bar'}, fill);
+  const paint = () => { const b = budgetLine(); line.textContent = b.text; line.style.color = b.over ? 'var(--accent)' : ''; fill.style.width = b.pct + '%'; fill.style.background = b.over ? 'var(--accent)' : 'var(--leaf)'; bar.style.display = budget ? '' : 'none'; };
+  input.addEventListener('input', () => { const v = parseFloat(input.value.replace(',', '.').replace(/[^0-9.]/g, '')); budget = v > 0 ? v : null; try { budget ? localStorage.setItem('rr-budget', String(budget)) : localStorage.removeItem('rr-budget'); } catch(e){} paint(); paintTally(); });
+  paint();
+  return el('div', {class:'find'},
+    peopleToggle(),
+    el('label', {for:'budgetIn'}, 'Your budget for this shop'),
+    el('div', {class:'row', style:'align-items:center'}, el('span', {style:'font-weight:700;font-size:18px'}, '£'), input,
+      el('button', {class:'chip' + (cheapFirst ? ' on' : ''), onclick:() => { cheapFirst = !cheapFirst; try { localStorage.setItem('rr-cheap', cheapFirst ? '1' : '0'); } catch(e){} render(); }}, 'Cheapest first')),
+    bar, line,
+    el('div', {class:'hint'}, 'Two prices: each card shows the cost of the ingredients you actually use. The total is what you pay at the till for whole packs, with shared packs counted once and cupboard staples left out. Prices are typical UK supermarket own-brand prices, not live ones.'));
+}
+let finding = false, listBusy = false, listErr = '';
+let ticks = {};
+try { ticks = JSON.parse(localStorage.getItem('rr-ticks') || '{}') || {}; } catch(e){ ticks = {}; }
+const saveTicks = () => { try { localStorage.setItem('rr-ticks', JSON.stringify(ticks)); } catch(e){} };
+const pickedRecipes = () => { const known = allKnown(); return S.picks.map(id => known.get(id)).filter(Boolean); };
+function shopText(){
+  const sh = shopFor(pickedRecipes()); const out = [];
+  for (const [k, name] of AISLES) { const it = sh.buy.filter(i => i.a === k); if (it.length) out.push(name.toUpperCase() + '\n' + it.map(i => (ticks[i.name] ? '[x] ' : '[ ] ') + i.name + ' (' + i.sub + ') - ' + gbp(i.cost)).join('\n')); }
+  out.push('TOTAL TO BUY: about ' + gbp(sh.total));
+  if (sh.cup.length) out.push('CHECK YOUR CUPBOARD (not in total)\n' + sh.cup.map(i => (ticks[i.name] ? '[x] ' : '[ ] ') + i.name + ' - ' + gbp(i.cost)).join('\n'));
+  return out.join('\n\n');
+}
+
+const $ = (s, r=document) => r.querySelector(s);
+const el = (tag, attrs={}, ...kids) => {
+  const n = document.createElement(tag);
+  for (const [k,v] of Object.entries(attrs)) {
+    if (k === 'class') n.className = v; else if (k.startsWith('on')) n.addEventListener(k.slice(2), v); else if (v !== false && v != null) n.setAttribute(k, v === true ? '' : v);
+  }
+  for (const k of kids.flat()) if (k != null) n.append(k.nodeType ? k : document.createTextNode(k));
+  return n;
+};
+const allKnown = () => { const m = new Map(); [...LIB, ...favExtra, ...S.extra, ...found].forEach(r => m.set(r.id, r)); return m; };
+const hash = s => { let h = 2166136261; for (const ch of String(s)) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; };
+const ttUrl = r => r.u && r.u.includes('tiktok.com') ? r.u : 'https://www.tiktok.com/search?q=' + enc(r.q || r.n);
+const igUrl = r => r.u && r.u.includes('instagram.com') ? r.u : 'https://www.instagram.com/explore/search/keyword/?q=' + enc(r.q || r.n);
+const ttApp = r => { const m = r.u && r.u.match(/tiktok\.com\/.*\/video\/(\d+)/); return m ? 'snssdk1233://aweme/detail/' + m[1] : 'snssdk1233://search?keyword=' + enc(r.q || r.n); };
+const webUrl = r => r.u || (WEB[r.w].url ? WEB[r.w].url(r.q || r.n) : null);
+const mainUrl = r => r.w ? webUrl(r) : (r.u || r.ru || null);
+
+/* ---------- picture ---------- */
+function art(r){
+  const spec = Object.assign({}, KINDS[r.k] || KINDS.plate, r.a || {});
+  let seed = hash(r.id) || 1;
+  const rnd = () => { seed ^= seed << 13; seed ^= seed >>> 17; seed ^= seed << 5; seed >>>= 0; return seed / 4294967296; };
+  const col = k => C[k] || k;
+  const bg = TINTS[hash(r.id + 'bg') % TINTS.length];
+  const o = [`<rect width="320" height="180" fill="${bg}"/>`];
+  let areas = [];
+  const base = col(spec.b);
+  const sh = (x,y,rr) => `<ellipse cx="${x}" cy="${y + 6}" rx="${rr}" ry="${rr * .96}" fill="#2A1E16" opacity=".10"/>`;
+  if (spec.v === 'bowl') {
+    o.push(sh(160,90,78), `<circle cx="160" cy="90" r="76" fill="#fff"/><circle cx="160" cy="90" r="76" fill="none" stroke="#E7DCCB" stroke-width="2"/><circle cx="160" cy="90" r="63" fill="${base}"/>`);
+    areas = [{x:160,y:90,r:54}];
+  } else if (spec.v === 'plate') {
+    o.push(sh(160,90,80), `<circle cx="160" cy="90" r="78" fill="#fff"/><circle cx="160" cy="90" r="64" fill="none" stroke="#EFE6D8" stroke-width="2"/><circle cx="160" cy="90" r="56" fill="${base}"/>`);
+    if (spec.b2) o.push(`<circle cx="160" cy="90" r="47" fill="${col(spec.b2)}"/>`);
+    areas = [{x:160,y:90,r:spec.b2 ? 42 : 48}];
+  } else if (spec.v === 'pan') {
+    o.push(`<rect x="225" y="80" width="90" height="20" rx="9" fill="#3A332E"/>`, sh(150,90,78), `<circle cx="150" cy="90" r="76" fill="#3A332E"/><circle cx="150" cy="90" r="65" fill="${base}"/>`);
+    if (spec.b2) o.push(`<circle cx="150" cy="90" r="52" fill="${col(spec.b2)}"/>`);
+    areas = [{x:150,y:90,r:spec.b2 ? 46 : 56}];
+  } else if (spec.v === 'tray') {
+    o.push(`<rect x="42" y="24" width="236" height="140" rx="16" fill="#2A1E16" opacity=".10"/><rect x="42" y="18" width="236" height="140" rx="16" fill="#8E8A86"/><rect x="52" y="28" width="216" height="120" rx="10" fill="${base}"/>`);
+    areas = [{x:64,y:40,w:192,h:96}];
+  } else if (spec.v === 'duo') {
+    o.push(`<rect x="34" y="20" width="252" height="144" rx="18" fill="#C89B6A"/><rect x="34" y="20" width="252" height="144" rx="18" fill="none" stroke="#B5875A" stroke-width="2"/>`);
+    for (const x of [58, 170]) { o.push(`<rect x="${x}" y="40" width="96" height="100" rx="18" fill="#B77B3D"/><rect x="${x + 6}" y="46" width="84" height="88" rx="14" fill="${base}"/>`); areas.push({x:x + 16,y:56,w:64,h:68}); }
+  } else if (spec.v === 'trio') {
+    o.push(`<rect x="24" y="28" width="272" height="128" rx="18" fill="#C89B6A"/>`);
+    for (const x of [78, 160, 242]) { o.push(`<circle cx="${x}" cy="92" r="40" fill="#F3DFB4"/><circle cx="${x}" cy="92" r="40" fill="none" stroke="#DDBF85" stroke-width="2"/><circle cx="${x}" cy="92" r="30" fill="${base}"/>`); areas.push({x,y:92,r:26}); }
+  } else { /* bars */
+    o.push(`<rect x="34" y="20" width="252" height="144" rx="18" fill="#fff"/>`);
+    for (const y of [36, 78, 120]) { o.push(`<rect x="60" y="${y}" width="200" height="30" rx="8" fill="${base}"/><rect x="60" y="${y + 22}" width="200" height="8" rx="4" fill="#5B3A29" opacity=".55"/>`); areas.push({x:68,y:y + 4,w:184,h:16}); }
+  }
+  const pt = (pad = 0) => {
+    const a = areas[Math.floor(rnd() * areas.length)];
+    if (a.r) { const ang = rnd() * 6.283, d = Math.sqrt(rnd()) * Math.max(4, a.r - pad); return [a.x + Math.cos(ang) * d, a.y + Math.sin(ang) * d]; }
+    return [a.x + pad + rnd() * Math.max(1, a.w - pad * 2), a.y + pad / 2 + rnd() * Math.max(1, a.h - pad)];
+  };
+  const f = n => n.toFixed(1);
+  for (const [shape, ck, count] of spec.t) {
+    const c = col(ck);
+    for (let i = 0; i < count; i++) {
+      const rot = Math.floor(rnd() * 360);
+      if (shape === 'dot') { const [x,y] = pt(6), rr = 5 + rnd() * 3.5; o.push(`<circle cx="${f(x)}" cy="${f(y)}" r="${f(rr)}" fill="${c}"/><circle cx="${f(x - rr * .3)}" cy="${f(y - rr * .3)}" r="${f(rr * .28)}" fill="#fff" opacity=".35"/>`); }
+      else if (shape === 'crumb') { const [x,y] = pt(2); o.push(`<circle cx="${f(x)}" cy="${f(y)}" r="${f(1.6 + rnd() * 1.4)}" fill="${c}"/>`); }
+      else if (shape === 'chunk') { const [x,y] = pt(9); o.push(`<rect x="${f(x - 8)}" y="${f(y - 6)}" width="16" height="12" rx="4" fill="${c}" transform="rotate(${rot} ${f(x)} ${f(y)})"/>`); }
+      else if (shape === 'leaf') { const [x,y] = pt(6); o.push(`<ellipse cx="${f(x)}" cy="${f(y)}" rx="8" ry="3.6" fill="${c}" transform="rotate(${rot} ${f(x)} ${f(y)})"/>`); }
+      else if (shape === 'ring') { const [x,y] = pt(9); o.push(`<circle cx="${f(x)}" cy="${f(y)}" r="7.5" fill="#fff" fill-opacity=".55" stroke="${c}" stroke-width="3"/>`); }
+      else if (shape === 'half') { const [x,y] = pt(9); o.push(`<path d="M${f(x - 9)} ${f(y)}a9 9 0 0 1 18 0z" fill="${c}" transform="rotate(${rot} ${f(x)} ${f(y)})"/>`); }
+      else if (shape === 'strip') { const [x,y] = pt(16), d = 10 + rnd() * 10; o.push(`<path d="M${f(x - 18)} ${f(y)}q9 ${f(-d)} 18 0t18 0" fill="none" stroke="${c}" stroke-width="4.5" stroke-linecap="round" transform="rotate(${rot} ${f(x)} ${f(y)})"/><path d="M${f(x - 18)} ${f(y)}q9 ${f(-d)} 18 0t18 0" fill="none" stroke="#2A1E16" stroke-opacity=".10" stroke-width="1" transform="rotate(${rot} ${f(x)} ${f(y)}) translate(0 2.6)"/>`); }
+      else if (shape === 'fillet') { const [x,y] = pt(26), tilt = -25 + rnd() * 50; o.push(`<rect x="${f(x - 26)}" y="${f(y - 13)}" width="52" height="26" rx="12" fill="${c}" transform="rotate(${f(tilt)} ${f(x)} ${f(y)})"/><path d="M${f(x - 14)} ${f(y - 5)}h28M${f(x - 14)} ${f(y + 4)}h28" stroke="#2A1E16" stroke-opacity=".14" stroke-width="2" stroke-linecap="round" transform="rotate(${f(tilt)} ${f(x)} ${f(y)})"/>`); }
+      else if (shape === 'drizzle') { const a = areas[0], cx = a.r ? a.x : a.x + a.w / 2, cy = a.r ? a.y : a.y + a.h / 2, w = a.r ? a.r * .8 : a.w * .42; o.push(`<path d="M${f(cx - w)} ${f(cy - 14)}q${f(w / 2)} -22 ${f(w)} 0t${f(w)} 0M${f(cx - w)} ${f(cy + 12)}q${f(w / 2)} -22 ${f(w)} 0t${f(w)} 0" fill="none" stroke="${c}" stroke-width="4" stroke-linecap="round" opacity=".9"/>`); }
+    }
+  }
+  const box = document.createElement('div');
+  box.innerHTML = `<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of ${r.n.replace(/[<>&"]/g, '')}">${o.join('')}</svg>`;
+  return box.firstChild;
+}
+
+/* ---------- cards ---------- */
+const openRec = new Set();
+function recipeBlock(r){
+  if (r.ing) {
+    const sh = shopFor([r]), used = usedCost(r), nt = nutOf(r);
+    return el('div', {class:'rec'},
+      nt ? el('div', {class:'kcal', style:'display:inline-block;margin:2px 0 6px'}, el('b', {}, '≈ ' + nt.kcal + ' kcal'), ' · ' + nt.protein + 'g protein a serving' + (nt.oil ? ' · includes ' + nt.oil + ' kcal of cooking oil' : '')) : null,
+      el('h4', {}, 'You need (' + servLabel(r).toLowerCase() + ') · cost of what you use'),
+      el('ul', {class:'ingl'}, r.ing.map(i => { const x = priceLine(i); return el('li', {}, el('span', {}, scaleText(i, fac(r))), el('b', {}, x ? gbp(x.cost * fac(r)) : '–')); })),
+      el('div', {class:'total', style:'margin-top:6px;font-size:14.5px'}, el('span', {}, 'Ingredients used'), el('span', {}, gbp(used) + ' · ' + gbp(used / cur(r)) + ' a serving')),
+      el('div', {class:'foot'}, 'Buying every pack new would be about ' + gbp(sh.total) + (sh.cup.length ? ', plus about ' + gbp(sh.cupTotal) + ' if you have none of the cupboard items (' + sh.cup.map(i => i.name.toLowerCase()).join(', ') + ')' : '') + '. You keep the leftovers.'),
+      el('h4', {}, 'Steps'), el('ol', {}, r.st.map(i => el('li', {}, i))),
+      el('div', {class:'foot'}, (fac(r) !== 1 ? 'Amounts are ' + (fac(r) < 1 ? 'halved' : 'doubled') + ' from the original to serve ' + cur(r) + '. The steps still mention the original amounts in places, so use the list above, and expect cooking times to be about the same. ' : '') + 'Plus oil, salt and pepper from the cupboard. Calories and protein are estimates from standard food values for this version of the dish.' + (r.claudeVer ? ' This is a simple version of the dish written by Claude, so the original may differ.' : '')));
+  }
+  const text = recipes[r.id], busy = recipeBusy[r.id];
+  if (!text && !busy) return el('div', {class:'rec'}, el('div', {class:'foot'}, sampleNs ? 'Tap Recipe again to write it.' : 'A written recipe isn’t available in this view. Use the link to the original.'));
+  return el('div', {class:'rec'}, el('div', {class:'txt', id:'steps-' + r.id}, text || 'Writing the recipe…'),
+    text && !busy ? el('div', {class:'foot'}, 'Claude’s own version of this dish. The original may differ.') : null);
+}
+function toggleRec(r){
+  if (openRec.has(r.id)) openRec.delete(r.id);
+  else { openRec.add(r.id); if (!r.ing && !recipes[r.id] && sampleNs) { makeRecipe(r); return; } }
+  render();
+}
+
+function fromLine(r){
+  if (r.w === 'app') return 'From: this app · written by Claude';
+  if (r.w) return 'From: ' + WEB[r.w].n + (r.c ? ' · ' + r.c : '');
+  const where = r.p === 'Both' ? 'TikTok & Instagram' : r.p;
+  return 'From: ' + where + (r.c ? ' · ' + r.c : ' · viral trend, many creators');
+}
+
+function card(r){
+  const picked = S.picks.includes(r.id);
+  const plats = r.w ? [] : (r.p === 'Both' ? ['TikTok','Instagram'] : [r.p]);
+  const badges = r.w ? [el('span', {class:'plat', style:'background:' + WEB[r.w].c}, WEB[r.w].n)]
+                     : plats.map(p => el('span', {class:'plat', style:'background:' + (p === 'TikTok' ? '#111' : '#B8327A')}, p));
+  const by = servLabel(r) + (r.m ? ' · ~' + r.m + ' min' : '');
+  const cost = costOf(r), nut = nutOf(r);
+  const isApp = r.w === 'app', open = openRec.has(r.id);
+  const recBtn = el('button', {class:'pick sec', onclick:() => toggleRec(r)}, open ? 'Hide recipe' : 'Recipe');
+  const actionsRaw = isApp ? [] : r.w
+    ? [el('a', {class:'watch', href:webUrl(r)}, r.u ? 'View recipe' : 'Find recipe'),
+       el('a', {class:'watch', href:'https://www.youtube.com/results?search_query=' + enc(r.n + ' recipe')}, '▶ Video')]
+    : [r.u ? el('a', {class:'watch', href:r.u}, '▶ Original video') : null,
+       r.ru ? el('a', {class:'watch', href:r.ru}, 'Written recipe') : null];
+  const actions = actionsRaw.filter(Boolean), link = mainUrl(r);
+  return el('article', {class:'card' + (picked ? ' picked' : '')},
+    el('div', {class:'picwrap'},
+      el(!link ? 'div' : 'a', !link ? {class:'pic'} : {class:'pic', href:link, 'aria-label':(r.w ? 'Open recipe: ' : 'Watch: ') + r.n},
+      art(r),
+      el('div', {class:'badges'}, badges, r.isNew ? el('span', {class:'new'}, 'New idea') : null),
+      r.u && !r.w ? el('span', {class:'play'}, '▶') : null),
+      el('button', {class:'heart' + (favs.includes(r.id) ? ' on' : ''), 'aria-label':(favs.includes(r.id) ? 'Remove from favourites: ' : 'Add to favourites: ') + r.n, onclick:() => toggleFav(r)}, favs.includes(r.id) ? '♥' : '♡')),
+    el('div', {class:'body'},
+      el('h2', {class:'name'}, r.n),
+      el('div', {class:'by from'}, fromLine(r)),
+      by || cost != null ? el('div', {class:'by'}, cost != null ? [el('span', {class:'price'}, gbp(cost * cur(r)) + ' of ingredients' + (serv(r) <= 2 ? ' for ' + cur(r) : ', makes ' + serv(r))), ' (' + gbp(cost) + ' a serving)'] : null, by && cost != null ? ' · ' : null, by || null) : null,
+      nut ? el('div', {class:'kcal'}, el('b', {}, '≈ ' + nut.kcal + ' kcal'), ' · ' + nut.protein + 'g protein a serving') : null,
+      el('p', {class:'blurb'}, r.b),
+      el('div', {class:'tags'}, (r.t||[]).map(t => el('span', {class:'tag'}, t))),
+      open ? recipeBlock(r) : null,
+      el('div', {class:'actions'}, recBtn, el('button', {class:'pick', style:isApp ? 'flex:1' : null, onclick:() => togglePick(r)}, picked ? (tab === 'picks' ? '✕ Remove' : '✓ In week') : '+ Add to week')),
+      actions.length ? el('div', {class:'actions'}, actions, el('button', {class:'watch', style:'flex:none;min-width:0', onclick:e => copyLink(e, link)}, 'Copy link')) : null));
+}
+
+function render(){
+  const app = $('#app'); app.replaceChildren();
+  document.querySelectorAll('.tab').forEach(b => b.classList.toggle('on', b.dataset.tab === tab));
+  $('#count').textContent = S.picks.length;
+  paintTally();
+  { const fc = document.getElementById('favCount'); if (fc) fc.textContent = favs.length ? String(favs.length) : ''; }
+  if (tab === 'discover') renderDiscover(app); else if (tab === 'cook') renderCook(app); else if (tab === 'favs') renderFavs(app); else renderPicks(app);
+}
+
+function renderDiscover(app){
+  app.append(budgetPanel());
+  if (sampleNs) {
+    const input = el('input', {type:'text', id:'q', placeholder:'e.g. chicken under 20 min, BBC curry, air fryer…', enterkeyhint:'search'});
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') findMore(); });
+    app.append(el('div', {class:'find'},
+      el('label', {for:'q'}, 'Find more recipes'),
+      el('div', {class:'row'}, input, el('button', {class:'btn', id:'findBtn', onclick:findMore, disabled:finding}, finding ? 'Finding…' : 'Find')),
+      el('div', {class:'status', id:'findStatus'}),
+      el('div', {class:'hint'}, 'Claude suggests viral reels and recipes from BBC Food, Good Food and more. Tap a card to open the real thing.')));
+  }
+  app.append(el('div', {class:'lbl'}, 'Source'));
+  app.append(el('div', {class:'chips'}, SRC_CHIPS.map(([k,n]) => el('button', {class:'chip' + (srcFilter === k ? ' on' : ''), onclick:() => { srcFilter = k; render(); }}, n))));
+  app.append(el('div', {class:'lbl'}, 'Type'));
+  app.append(el('div', {class:'chips'}, ['All', ...TAGS].map(t => el('button', {class:'chip' + (filter === t ? ' on' : ''), onclick:() => { filter = t; render(); }}, t))));
+  const list = [...found, ...LIB].filter(r => (filter === 'All' || (r.t||[]).includes(filter)) && (srcFilter === 'all' || (srcFilter === 'reels' ? !r.w : r.w === srcFilter)));
+  if (cheapFirst) list.sort((a, b) => (costOf(a) ?? 99) - (costOf(b) ?? 99));
+  if (!list.length) { app.append(el('div', {class:'empty'}, 'Nothing matches those filters yet.' + (sampleNs ? ' Try Find more above.' : ''))); return; }
+  app.append(el('div', {class:'grid'}, list.map(card)));
+}
+
+function renderPicks(app){
+  const known = allKnown();
+  const picks = S.picks.map(id => known.get(id)).filter(Boolean);
+  if (!picks.length) { app.append(el('div', {class:'empty'}, 'Nothing in your week yet.', el('br'), 'Tap “+ Add to week” on anything that looks good.')); return; }
+  app.append(budgetPanel());
+  { const ns = picks.map(nutOf).filter(Boolean); if (ns.length) app.append(el('p', {class:'sub', style:'margin:0 0 12px'}, 'Calories per serving across your week: ' + Math.min(...ns.map(n => n.kcal)) + (ns.length > 1 ? '–' + Math.max(...ns.map(n => n.kcal)) : '') + ' kcal' + (ns.length > 1 ? ', average ' + Math.round(ns.reduce((a, n) => a + n.kcal, 0) / ns.length / 10) * 10 : '') + '.')); }
+  app.append(el('div', {class:'grid'}, picks.map(card)));
+  app.append(el('div', {class:'row', style:'margin-top:14px'}, el('button', {class:'btn ghost', style:'flex:1', onclick:clearAll}, clearArmed ? 'Tap again to remove all ' + picks.length : 'Clear my week')));
+  if (saveNote) app.append(el('p', {class:'note'}, saveNote));
+  {
+    const sh = shopFor(picks), all = [...sh.buy, ...sh.cup];
+    for (const k of Object.keys(ticks)) if (!all.some(i => i.name === k)) delete ticks[k];
+    const countEl = el('div', {class:'by', style:'margin-bottom:10px'});
+    const paintCount = () => { countEl.textContent = all.filter(i => ticks[i.name]).length + ' of ' + all.length + ' ticked'; };
+    paintCount();
+    const row = it => {
+      const box = el('input', {type:'checkbox'}); box.checked = !!ticks[it.name];
+      const r = el('label', {class:'item' + (box.checked ? ' done' : '')}, box, el('span', {}, it.name, el('small', {}, it.sub)), el('b', {class:'p'}, gbp(it.cost)));
+      box.addEventListener('change', () => { if (box.checked) ticks[it.name] = 1; else delete ticks[it.name]; r.classList.toggle('done', box.checked); saveTicks(); paintCount(); });
+      return r;
+    };
+    const panel = el('div', {class:'panel'},
+      el('h3', {}, 'Shopping list'), countEl,
+      el('div', {class:'row', style:'flex-wrap:wrap'},
+        el('button', {class:'btn ghost', onclick:copyList}, 'Copy list'),
+        Object.keys(ticks).length ? el('button', {class:'btn ghost', onclick:() => { ticks = {}; saveTicks(); render(); }}, 'Untick all') : null));
+    for (const [k, name] of AISLES) { const it = sh.buy.filter(i => i.a === k); if (!it.length) continue; panel.append(el('div', {class:'aisle'}, name)); it.forEach(i => panel.append(row(i))); }
+    panel.append(el('div', {class:'total'}, el('span', {}, 'Total to buy'), el('span', {}, 'about ' + gbp(sh.total))));
+    if (budget) panel.append(el('div', {class:'total', style:'margin-top:4px;font-size:14px;color:' + (sh.total > budget ? 'var(--accent)' : 'var(--leaf)')}, el('span', {}, 'Budget ' + gbp(budget)), el('span', {}, sh.total > budget ? gbp(sh.total - budget) + ' over' : gbp(budget - sh.total) + ' under')));
+    if (sh.cup.length) {
+      panel.append(el('div', {class:'aisle'}, 'Check your cupboard first · not in the total'));
+      sh.cup.forEach(i => panel.append(row(i)));
+      panel.append(el('div', {class:'have'}, 'If you had none of these it would add about ' + gbp(sh.cupTotal) + '.'));
+    }
+    if (sh.noIng.length) panel.append(el('div', {class:'have'}, 'Not in this list (no built-in ingredients): ' + sh.noIng.join(', ') + '.'));
+    panel.append(el('div', {class:'have'}, 'Prices are typical UK supermarket own-brand prices for the pack sizes shown, not live prices. Aldi and Lidl are usually a little cheaper. Oil, salt and pepper are not listed.'));
+    app.append(panel);
+  }
+  app.append(el('div', {class:'row', style:'margin-top:14px'}, el('button', {class:'btn', style:'flex:1', onclick:() => { tab = 'cook'; history.replaceState(null, '', '#cook'); render(); window.scrollTo(0,0); }}, 'Got the ingredients? Start cooking →')));
+}
+
+function renderFavs(app){
+  const known = allKnown();
+  const list = favs.map(id => known.get(id)).filter(Boolean);
+  if (!list.length) { app.append(el('div', {class:'empty'}, 'No favourites yet.', el('br'), 'Tap the ♥ on any recipe to keep it here for next time.')); return; }
+  app.append(el('p', {class:'sub', style:'margin:0 0 12px'}, 'Your saved recipes. They stay here after you remove them from your week.'));
+  app.append(el('div', {class:'grid'}, list.map(card)));
+}
+
+function renderCook(app){
+  const known = allKnown();
+  const picks = S.picks.map(id => known.get(id)).filter(Boolean);
+  if (!picks.length) { app.append(el('div', {class:'empty'}, 'Nothing to cook yet.', el('br'), 'Add some dishes to your week in Discover and they will show up here with step-by-step recipes.')); return; }
+  app.append(peopleToggle());
+  app.append(el('p', {class:'sub', style:'margin:0 0 12px'}, 'Got the ingredients? Here is the full breakdown for each dish: what you need, then what to do.'));
+  for (const r of picks) {
+    const text = recipes[r.id], busy = recipeBusy[r.id], isApp = r.w === 'app';
+    const nt0 = nutOf(r);
+    const by = [fromLine(r), servLabel(r), r.m ? '~' + r.m + ' min' : null, nt0 ? '≈ ' + nt0.kcal + ' kcal a serving' : null].filter(Boolean).join(' · ');
+    app.append(el('section', {class:'cook'},
+      el('div', {class:'head'},
+        el('div', {class:'thumb'}, art(r)),
+        el('div', {class:'ttl'}, el('h2', {class:'name'}, r.n), el('div', {class:'by'}, by))),
+      r.ing || text || busy ? el('div', {style:'padding:0 14px 12px'}, recipeBlock(r)) : null,
+      el('div', {class:'row'}, el('button', {class:'btn ghost', style:'flex:1', onclick:() => togglePick(r)}, '✓ Cooked it · remove from week'), el('button', {class:'btn ghost', onclick:() => toggleFav(r)}, favs.includes(r.id) ? '♥ Saved' : '♡ Favourite')),
+      isApp ? null : el('div', {class:'row'},
+        !r.ing && sampleNs ? el('button', {class:'btn', onclick:() => makeRecipe(r), disabled:!!busy}, busy ? 'Writing…' : (text ? 'Rewrite' : 'Show recipe')) : null,
+        !r.ing && !sampleNs && !text ? el('div', {class:'foot', style:'flex-basis:100%;padding:0'}, 'Claude can’t write this one in this view, so open the original for the method.') : null,
+        mainUrl(r) ? el('a', {class:'watch', href:mainUrl(r)}, r.w ? (r.u ? 'Original recipe' : 'Find original') : (r.u ? '▶ Original video' : 'Written recipe')) : null)));
+  }
+}
+
+async function makeRecipe(r){
+  if (!sampleNs || recipeBusy[r.id]) return;
+  recipeBusy[r.id] = true; recipes[r.id] = ''; render();
+  const prompt = `Write a clear home-cook recipe, in your own words, for this dish: "${r.n}" (${r.b})
+Keep it easy: as few ingredients as the dish allows (aim for 8 or fewer, not counting oil, salt and pepper) and no more than 6 steps. For 2 servings, UK English, metric units, UK supermarket ingredient names. Plain text only, no markdown symbols. Use exactly this layout:
+TIME: prep and cook minutes
+YOU NEED:
+• one ingredient with quantity per line
+STEPS:
+1. short, specific steps with heat levels, timings and what to look for
+TIPS:
+• up to 3 lines: a swap, how to store or reheat, and how to add protein or cut calories if relevant
+No intro or outro.`;
+  try {
+    await sampleNs(prompt, {cache:true, onText: ({text}) => { recipes[r.id] = text; const o = document.getElementById('steps-' + r.id); if (o) o.textContent = text; }});
+    try { localStorage.setItem('rr-recipes', JSON.stringify(recipes)); } catch(e){}
+  } catch(err) {
+    if (!recipes[r.id]) recipes[r.id] = err && err.code === 'rate_limited' ? 'Busy right now. Try again in a minute.' : 'Couldn’t write that one. Try again.';
+  }
+  recipeBusy[r.id] = false; render();
+}
+
+let clearArmed = false, clearTimer = null;
+function clearAll(){
+  if (!clearArmed) { clearArmed = true; render(); clearTimeout(clearTimer); clearTimer = setTimeout(() => { clearArmed = false; render(); }, 4000); return; }
+  clearTimeout(clearTimer); clearArmed = false;
+  S.picks = []; S.extra = [];
+  render(); scheduleSave();
+}
+
+function togglePick(r){
+  const i = S.picks.indexOf(r.id);
+  if (i >= 0) { S.picks.splice(i,1); S.extra = S.extra.filter(x => x.id !== r.id); }
+  else { S.picks.push(r.id); if (!LIB.some(x => x.id === r.id) && !S.extra.some(x => x.id === r.id)) S.extra.push({...r, isNew:false}); }
+  render();
+  scheduleSave();
+}
+
+function scheduleSave(){
+  try { localStorage.setItem('rr-picks', JSON.stringify(S)); saveNote = ''; }
+  catch(e) { saveNote = 'Your week is kept while this page is open.'; }
+}
+
+function clean(arr){
+  if (!Array.isArray(arr)) return [];
+  const names = new Set([...LIB, ...found, ...S.extra].map(r => r.n.toLowerCase()));
+  return arr.filter(x => x && typeof x.name === 'string' && !names.has(x.name.toLowerCase())).slice(0, 8).map((x, i) => {
+    const w = WEBNAMES[x.source] || null;
+    return {
+      id: 'ai-' + Date.now().toString(36) + '-' + i,
+      n: x.name.slice(0, 80),
+      k: KINDS[x.kind] ? x.kind : 'plate',
+      w, p: w ? null : (['TikTok','Instagram','Both'].includes(x.source) ? x.source : 'Both'),
+      c: typeof x.creator === 'string' ? x.creator.slice(0, 40) : '',
+      b: String(x.blurb || '').slice(0, 220),
+      t: Array.isArray(x.tags) ? x.tags.filter(t => TAGS.includes(t)) : [],
+      m: Number(x.mins) || null,
+      cost: Number(x.cost) > 0 && Number(x.cost) < 20 ? Math.round(Number(x.cost) * 100) / 100 : null,
+      q: String(x.search || x.name).slice(0, 80),
+      isNew: true
+    };
+  });
+}
+
+async function findMore(){
+  if (finding || !sampleNs) return;
+  const typed = $('#q') ? $('#q').value.trim() : '';
+  const q = typed || 'surprise me with a mix of currently popular ones';
+  finding = true; render();
+  $('#q').value = typed;
+  $('#findStatus').replaceChildren(el('span', {class:'spinner'}), 'Looking for recipes…');
+  const skip = [...LIB, ...found, ...S.extra].map(r => r.n).join('; ');
+  const scope = srcFilter === 'all' ? 'a mix of viral TikTok/Instagram reels and recipes from the listed UK recipe sites' : srcFilter === 'reels' ? 'viral TikTok/Instagram reels only' : 'recipes from ' + WEB[srcFilter].n + ' only';
+  const prompt = `You help a UK home cook discover recipes from short-video platforms and well-known recipe sites.
+Request: ${q}
+Suggest 6 real, recognisable recipes that fit the request: ${scope}. Reel suggestions must be recipes that genuinely went viral; site suggestions must be recipes that really exist on that site under that name. Do not suggest any of these: ${skip}.
+Return ONLY a JSON array of 6 objects with keys:
+"name" (recipe name as published or as people search it),
+"source" (one of: TikTok, Instagram, Both, ${Object.keys(WEBNAMES).join(', ')}),
+"creator" (an @handle or chef name ONLY if you are certain, otherwise ""),
+"blurb" (one sentence, max 22 words, what it is and why people love it, UK English),
+"tags" (array chosen only from: ${TAGS.join(', ')}), "mins" (approx total minutes, number),
+"cost" (estimated cost per serving in GBP as a number, using UK budget-supermarket own-brand prices),
+"kind" (the closest of: ${Object.keys(KINDS).join(', ')}),
+"search" (2-6 word phrase that finds it).`;
+  try {
+    const res = await sampleNs.json(prompt, {modelTier:'default'});
+    const items = clean(Array.isArray(res) ? res : (res && res.recipes));
+    found = [...items, ...found];
+    filter = 'All';
+    finding = false; render();
+    $('#findStatus').textContent = items.length ? `Added ${items.length} new ideas at the top.` : 'No new ideas came back. Try different words.';
+  } catch(err) {
+    finding = false; render();
+    const s = $('#findStatus');
+    if (err && err.code === 'not_granted') { sampleNs = null; render(); }
+    else if (s) s.textContent = err && err.code === 'rate_limited' ? 'Too many searches just now. Try again in a minute.' : 'That didn’t work. Try again.';
+  }
+}
+
+async function copyList(e){
+  try { await navigator.clipboard.writeText(shopText()); e.target.textContent = 'Copied'; }
+  catch(_) { e.target.textContent = 'Copy failed'; }
+}
+
+document.getElementById('tally').addEventListener('click', () => { if (!budget && tab !== 'cook') { window.scrollTo(0, 0); const i = document.getElementById('budgetIn'); if (i) i.focus(); } else { tab = 'picks'; history.replaceState(null, '', '#picks'); render(); window.scrollTo(0, 0); } });
+document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => { tab = b.dataset.tab; history.replaceState(null, '', tab === 'discover' ? '#' : '#' + tab); render(); window.scrollTo(0,0); }));
+
+try { const t = sessionStorage.getItem('rr-tab'); if (t) { tab = t; sessionStorage.removeItem('rr-tab'); } } catch(e){}
+{ const known = allKnown(); S.picks = S.picks.filter(id => known.has(id)); favs = favs.filter(id => known.has(id)); }
+render();
+try { const y = sessionStorage.getItem('rr-scroll'); if (y) { sessionStorage.removeItem('rr-scroll'); requestAnimationFrame(() => window.scrollTo(0, +y)); } } catch(e){}
+
+</script>
+</body>
+</html>
